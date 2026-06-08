@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>電験1種一次 電力 実践問題集</title>
+
+<!-- PWA: マニフェストとテーマ -->
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="theme-color" content="#1d4ed8" />
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
+
+<!-- iOS Safari: ホーム画面追加でアプリ風に起動するためのヒント -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="電験1電力" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon-180.png" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --panel: #ffffff;
+    --panel-alt: #f7f9fc;
+    --border: #e3e8ef;
+    --text: #1f2937;
+    --muted: #64748b;
+    --primary: #1e6feb;
+    --primary-hover: #1856b8;
+    --accent: #0ea371;
+    --danger: #d92d20;
+    --warn: #b54708;
+    --shadow: 0 1px 2px rgba(16, 24, 40, 0.05), 0 1px 3px rgba(16, 24, 40, 0.06);
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, sans-serif; line-height: 1.6; }
+
+  header.app-header {
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 24px;
+  }
+  header.app-header h1 {
+    margin: 0; font-size: 1.25rem; font-weight: 700; color: #0f172a;
+    display: flex; align-items: center; gap: 10px;
+  }
+  header.app-header h1::before {
+    content: ""; width: 6px; height: 22px; background: var(--primary); border-radius: 3px;
+  }
+  header.app-header .sub { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+
+  main {
+    max-width: 1100px; margin: 0 auto;
+    padding:
+      max(24px, env(safe-area-inset-top))
+      max(16px, env(safe-area-inset-right))
+      max(80px, env(safe-area-inset-bottom))
+      max(16px, env(safe-area-inset-left));
+  }
+
+  .card {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 20px; margin-bottom: 16px;
+  }
+  .card h2 {
+    margin: 0 0 14px; font-size: 1.05rem; font-weight: 700; color: #0f172a;
+    border-left: 4px solid var(--primary); padding-left: 10px;
+  }
+  .card h3 { margin: 14px 0 8px; font-size: 0.95rem; font-weight: 700; color: #334155; }
+
+  .filter-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  @media (max-width: 720px) { .filter-grid { grid-template-columns: 1fr; } }
+  .field label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 4px; font-weight: 600; }
+  .field select, .field input {
+    width: 100%; padding: 9px 10px; border: 1px solid var(--border);
+    border-radius: 8px; background: #fff; font-size: 0.95rem; color: var(--text);
+  }
+  .field select:focus { outline: 2px solid #bfdbfe; border-color: var(--primary); }
+
+  .btn {
+    appearance: none; border: 1px solid transparent; border-radius: 8px;
+    padding: 10px 16px; font-size: 0.92rem; font-weight: 600; cursor: pointer;
+    background: #fff; color: var(--text); transition: background .15s, color .15s, border-color .15s;
+  }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover { background: var(--primary-hover); }
+  .btn-outline { border-color: var(--border); color: #334155; }
+  .btn-outline:hover { background: var(--panel-alt); }
+  .btn-danger { background: var(--danger); color: #fff; }
+  .btn-danger:hover { background: #b42318; }
+
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+
+  .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+  .cat-btn {
+    text-align: left; padding: 12px 14px; border: 1px solid var(--border);
+    border-radius: 8px; background: var(--panel-alt); cursor: pointer;
+    transition: background .15s, border-color .15s;
+  }
+  .cat-btn:hover { background: #eef4ff; border-color: #bfdbfe; }
+  .cat-btn .cat-name { font-weight: 700; color: #0f172a; display: block; }
+  .cat-btn .cat-meta { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+  .quiz-header {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 12px;
+  }
+  .progress-wrap { flex: 1; min-width: 200px; }
+  .progress-bar { height: 8px; background: #eef2f7; border-radius: 999px; overflow: hidden; }
+  .progress-bar > span {
+    display: block; height: 100%;
+    background: linear-gradient(90deg, #1e6feb, #38bdf8);
+    width: 0%; transition: width .3s ease;
+  }
+  .progress-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+  .score-pill {
+    background: var(--panel-alt); border: 1px solid var(--border);
+    color: #0f172a; padding: 6px 12px; border-radius: 999px;
+    font-weight: 700; font-size: 0.9rem; white-space: nowrap;
+  }
+
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .badge {
+    display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 999px;
+    font-size: 0.72rem; font-weight: 700; border: 1px solid var(--border);
+    background: #fff; color: #334155; letter-spacing: 0.02em;
+  }
+  .badge.cat { background: #eef4ff; color: #1d4ed8; border-color: #bfdbfe; }
+  .badge.topic { background: #f1f5f9; color: #475569; }
+  .badge.level-基本 { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
+  .badge.level-応用 { background: #fffbeb; color: #92400e; border-color: #fde68a; }
+  .badge.level-難問 { background: #fef2f2; color: #b91c1c; border-color: #fecaca; }
+  .badge.important { background: var(--danger); color: #fff; border-color: var(--danger); }
+  .badge.prio-S { background: #fef2f2; color: #991b1b; border-color: #fca5a5; font-weight: 800; }
+  .badge.prio-A { background: #fff7ed; color: #9a3412; border-color: #fdba74; }
+  .badge.prio-B { background: #f0fdf4; color: #166534; border-color: #86efac; }
+  .badge.prio-C { background: #f1f5f9; color: #475569; border-color: #cbd5e1; }
+  .badge.source { background: #eef2ff; color: #3730a3; border-color: #c7d2fe; font-family: monospace; }
+
+  /* Self-explain panel */
+  .self-explain {
+    margin-top: 10px; padding: 12px 14px; border: 1px dashed #94a3b8;
+    border-radius: 8px; background: #fafbff;
+  }
+  .self-explain summary {
+    cursor: pointer; font-weight: 700; color: #1e40af; font-size: 0.9rem;
+  }
+  .self-explain .hint { margin-top: 8px; color: #334155; font-size: 0.92rem; line-height: 1.6; }
+  .self-explain textarea {
+    width: 100%; min-height: 80px; margin-top: 8px; padding: 8px; font-size: 0.9rem;
+    border: 1px solid var(--border); border-radius: 6px; resize: vertical;
+    font-family: inherit;
+  }
+  .self-explain .se-meta { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+  .deep-blocks { display: grid; gap: 6px; margin-top: 10px; }
+  .deep-blocks .db {
+    padding: 8px 10px; border-left: 3px solid #cbd5e1; background: #f8fafc;
+    border-radius: 4px; font-size: 0.88rem; color: #334155;
+  }
+  .deep-blocks .db strong { color: #0f172a; }
+
+  .question { font-size: 1.05rem; font-weight: 600; color: #0f172a; margin: 6px 0 16px; white-space: pre-wrap; }
+
+  .choices { display: grid; gap: 8px; }
+  .choice {
+    display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px;
+    border: 1px solid var(--border); border-radius: 8px; background: #fff;
+    cursor: pointer; text-align: left; width: 100%; font-size: 0.96rem; color: var(--text);
+    transition: background .15s, border-color .15s, box-shadow .15s;
+  }
+  .choice:hover:not(:disabled) { background: var(--panel-alt); border-color: #cbd5e1; }
+  .choice .idx {
+    width: 24px; height: 24px; flex-shrink: 0; background: #eef2f7;
+    color: #334155; border-radius: 6px; display: inline-flex;
+    align-items: center; justify-content: center; font-weight: 700; font-size: 0.82rem;
+  }
+  .choice.correct { background: #ecfdf5; border-color: #6ee7b7; }
+  .choice.correct .idx { background: var(--accent); color: #fff; }
+  .choice.wrong { background: #fef2f2; border-color: #fca5a5; }
+  .choice.wrong .idx { background: var(--danger); color: #fff; }
+  .choice:disabled { cursor: default; }
+
+  .feedback {
+    margin-top: 14px; padding: 12px 14px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--panel-alt); font-size: 0.92rem;
+  }
+  .feedback.ok { border-color: #6ee7b7; background: #ecfdf5; color: #065f46; }
+  .feedback.ng { border-color: #fca5a5; background: #fef2f2; color: #991b1b; }
+  .feedback .label { font-weight: 700; margin-right: 6px; }
+  .feedback .explain { color: #1f2937; margin-top: 6px; }
+
+  .nav-row { display: flex; justify-content: space-between; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+
+  .result-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 12px; }
+  @media (max-width: 720px) { .result-grid { grid-template-columns: 1fr; } }
+  .stat {
+    background: var(--panel-alt); border: 1px solid var(--border);
+    border-radius: 8px; padding: 14px; text-align: center;
+  }
+  .stat .num { font-size: 1.6rem; font-weight: 700; color: #0f172a; }
+  .stat .label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+
+  table.weak { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 8px; }
+  table.weak th, table.weak td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; }
+  table.weak th { background: var(--panel-alt); color: #334155; font-weight: 700; }
+  table.weak td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .review { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 14px; }
+  .review-item { padding: 10px 0; border-bottom: 1px dashed var(--border); }
+  .review-item:last-child { border-bottom: none; }
+  .review-item .q { font-weight: 600; color: #0f172a; }
+  .review-item .meta { font-size: 0.78rem; color: var(--muted); margin: 2px 0 4px; }
+  .review-item .a-line { font-size: 0.88rem; }
+  .review-item .a-line .ok { color: #047857; font-weight: 700; }
+  .review-item .a-line .ng { color: #b91c1c; font-weight: 700; }
+
+  .hint { font-size: 0.8rem; color: var(--muted); }
+  .center { text-align: center; }
+  .hidden { display: none !important; }
+
+  /* 論点マップ画面 */
+  .tm-toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 6px 0 14px; }
+  .tm-toolbar select { padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; }
+  .tm-legend { font-size: 0.78rem; color: var(--muted); }
+  .tm-field-block { margin-top: 18px; }
+  .tm-field-block h3 {
+    margin: 0 0 8px; padding: 6px 10px; background: #eef4ff; color: #1d4ed8;
+    border-left: 4px solid #1d4ed8; border-radius: 4px; font-size: 1rem;
+  }
+  .tm-table-wrap { overflow-x: auto; }
+  table.tm {
+    width: 100%; border-collapse: collapse; font-size: 0.78rem; min-width: 720px;
+  }
+  table.tm th, table.tm td {
+    border: 1px solid var(--border); padding: 4px 6px; text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+  table.tm th.macro-h {
+    background: var(--panel-alt); text-align: left; min-width: 200px;
+    position: sticky; left: 0; z-index: 1;
+  }
+  table.tm td.macro {
+    text-align: left; background: #fff; cursor: pointer;
+    position: sticky; left: 0; z-index: 1;
+    border-right: 2px solid #cbd5e1;
+  }
+  table.tm td.macro:hover { background: #f0f9ff; color: #1d4ed8; }
+  table.tm td.macro .cnt { color: var(--muted); font-size: 0.72rem; margin-left: 6px; }
+  table.tm td.year-cell { background: #fff; }
+  table.tm td.year-cell.hit { background: #fef3c7; color: #92400e; font-weight: 700; }
+  table.tm td.year-cell.hit.recent { background: #fde68a; color: #78350f; }
+  table.tm td.year-cell.hit.mastered { background: #bbf7d0; color: #166534; }
+  table.tm th.year-h { background: var(--panel-alt); font-size: 0.72rem; }
+  table.tm th.year-h.recent { background: #fef3c7; color: #92400e; }
+  table.tm .total-col { background: #f1f5f9; font-weight: 700; }
+  .tm-detail {
+    margin-top: 16px; padding: 12px; background: #fafbff;
+    border: 1px solid var(--border); border-radius: 8px;
+  }
+  .tm-detail h4 { margin: 0 0 8px; color: #0f172a; font-size: 1rem; }
+  .tm-detail ul { margin: 4px 0 0 18px; padding: 0; font-size: 0.85rem; line-height: 1.7; }
+  .tm-detail .src { color: #1d4ed8; font-weight: 700; font-family: monospace; margin-right: 6px; }
+  .tm-stats { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; font-size: 0.85rem; }
+  .tm-stats .stat-pill {
+    padding: 4px 10px; background: var(--panel-alt); border-radius: 999px;
+    border: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+<header class="app-header">
+  <h1>電験1種一次 電力 実践問題集</h1>
+  <div class="sub">過去問頻出論点を踏まえた 50 問のオリジナル実践問題（穴埋め4択）</div>
+</header>
+
+<main>
+  <section id="setup">
+    <div class="card">
+      <h2>出題設定</h2>
+      <div class="filter-grid">
+        <div class="field">
+          <label for="f-level">難易度</label>
+          <select id="f-level">
+            <option value="all">すべて</option>
+            <option value="基本">基本</option>
+            <option value="応用">応用</option>
+            <option value="難問">難問</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-count">問題数</label>
+          <select id="f-count">
+            <option value="10">10 問</option>
+            <option value="20" selected>20 問</option>
+            <option value="30">30 問</option>
+            <option value="50">50 問</option>
+            <option value="all">全問</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-mode">出題モード</label>
+          <select id="f-mode">
+            <option value="random">ランダム</option>
+            <option value="category">カテゴリ順</option>
+          </select>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" id="btn-start">学習を開始</button>
+        <button class="btn btn-outline" id="btn-topic-map">📊 論点マップを見る</button>
+        <span class="hint" id="pool-info"></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>カテゴリ別ミニテスト（各 5 問）</h2>
+      <p class="hint">カテゴリを選ぶと、そのカテゴリからランダムに 5 問出題します（5 問未満のカテゴリは全問）。</p>
+      <div class="cat-grid" id="cat-grid"></div>
+    </div>
+  </section>
+
+  <section id="quiz" class="hidden">
+    <div class="card">
+      <div class="quiz-header">
+        <div class="progress-wrap">
+          <div class="progress-bar"><span id="bar"></span></div>
+          <div class="progress-meta">
+            <span id="prog-text">1 / 20</span>
+            <span id="mode-text"></span>
+          </div>
+        </div>
+        <div class="score-pill" id="score-pill">スコア 0 / 0</div>
+      </div>
+
+      <div class="badges" id="badges"></div>
+      <div class="question" id="q-text"></div>
+      <div class="choices" id="choices"></div>
+      <div class="feedback hidden" id="feedback"></div>
+
+      <div class="nav-row">
+        <button class="btn btn-outline" id="btn-abort">中断して設定に戻る</button>
+        <button class="btn btn-primary hidden" id="btn-next">次の問題へ</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="result" class="hidden">
+    <div class="card">
+      <h2>結果サマリー</h2>
+      <div class="result-grid">
+        <div class="stat"><div class="num" id="r-correct">0</div><div class="label">正答数</div></div>
+        <div class="stat"><div class="num" id="r-total">0</div><div class="label">出題数</div></div>
+        <div class="stat"><div class="num" id="r-rate">0%</div><div class="label">正答率</div></div>
+      </div>
+
+      <h3>誤答が多いカテゴリ</h3>
+      <table class="weak">
+        <thead><tr><th>カテゴリ</th><th class="num">誤答</th><th class="num">出題</th><th class="num">正答率</th></tr></thead>
+        <tbody id="weak-body"></tbody>
+      </table>
+
+      <div class="actions">
+        <button class="btn btn-danger" id="btn-redo-wrong">誤答のみ再出題</button>
+        <button class="btn btn-primary" id="btn-redo-same">同じ設定で再挑戦</button>
+        <button class="btn btn-outline" id="btn-redo-config">設定を変えてやり直す</button>
+      </div>
+
+      <div class="review" id="review"></div>
+    </div>
+  </section>
+
+  <section id="topic-map" class="hidden">
+    <div class="card">
+      <h2>📊 論点マップ（H23 〜 R07 出題マトリクス）</h2>
+      <p class="hint">行＝マクロ論点、列＝出題年。色付きセルは出題年。マクロ論点名をクリックすると詳細＋該当問題でミニテスト開始。</p>
+      <div class="tm-stats" id="tm-stats"></div>
+      <div class="tm-toolbar">
+        <label>分野フィルタ:
+          <select id="tm-filter-field"><option value="all">すべて</option></select>
+        </label>
+        <label>並び順:
+          <select id="tm-sort">
+            <option value="count" selected>出題回数 多い順</option>
+            <option value="recent">最新出題年 新しい順</option>
+            <option value="name">名前順</option>
+          </select>
+        </label>
+        <span class="tm-legend">凡例：
+          <span style="background:#fef3c7;padding:1px 6px;">過去出題</span>
+          <span style="background:#fde68a;padding:1px 6px;margin-left:4px;">直近3年</span>
+          <span style="background:#bbf7d0;padding:1px 6px;margin-left:4px;">攻略済</span>
+        </span>
+      </div>
+      <div id="tm-body"></div>
+      <div class="actions" style="margin-top: 16px;">
+        <button class="btn btn-outline" id="btn-tm-back">← 設定画面に戻る</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="data/extended_questions.js"></script>
+<script src="data/topic_frequency_extended.js"></script>
+<script>
+/* =========================================================
+   問題データ（電験1種一次 電力）
+   既存50問: AI再構成オリジナル4択（H21〜R6の傾向ベース）
+   追加134問: 電験王R04〜R07の穴埋を1空欄=1問の4択に分解
+   各問題: { id, category, topic, important, level, question, choices[4], answer(0..3), explanation,
+             source?{year,q,blank,book}, macroTopic?, frequency?, priority?,
+             whyMatters?, whatIf?, whenNot?, selfExplainHint?, niji? }
+   ========================================================= */
+const QUESTIONS = [
+  /* ---------- 水力発電 (6) ---------- */
+  {id:1, category:"水力発電", topic:"比速度", important:true, level:"応用",
+    question:"水車の比速度 nS について、次の文中の空所に最も適切な語句または値を入れよ。\n「比速度は、ある水車を( )相似な条件で、有効落差 1 m、出力 1 kW を発生する小型水車に換算したときの回転速度である。」",
+    choices:[
+      "幾何学的に",
+      "電気的に",
+      "熱力学的に",
+      "化学的に"
+    ],
+    answer:0,
+    explanation:"比速度は幾何学的相似（縮尺則）の下で定義される。実機水車を H=1m、P=1kW に換算した仮想小型水車の回転数として与えられ、水車型式選定の指標となる。"},
+  {id:2, category:"水力発電", topic:"キャビテーション", important:true, level:"応用",
+    question:"水車のキャビテーション発生を抑制する対策として「最も不適切」なものはどれか。",
+    choices:[
+      "吸出し管（ドラフトチューブ）高さを規定値以下とする",
+      "ランナ材質にステンレス鋼を用いる",
+      "吸出し高さを増し、ランナ出口圧力を下げる",
+      "比速度を過大にしない範囲で水車を選定する"
+    ],
+    answer:2,
+    explanation:"吸出し高さを増す（ランナ位置を下流水面より高く設置する）と、ランナ出口の絶対圧力が低下しキャビテーションを促進するため不適切。実機では吸出し高さは限界吸出し高さ以下に抑える。"},
+  {id:3, category:"水力発電", topic:"水撃作用", important:false, level:"応用",
+    question:"水圧管路での水撃圧上昇を抑える方策として「適切でない」ものはどれか。",
+    choices:[
+      "サージタンクを設ける",
+      "ガイドベーンの閉鎖時間を短くする",
+      "圧力調整弁を併設する",
+      "水圧管の管径を大きくし管内流速を下げる"
+    ],
+    answer:1,
+    explanation:"ガイドベーン閉鎖時間を短くすると水柱の運動量変化が急峻になり水撃圧が増大する。閉鎖時間は適切に長く確保することが基本。"},
+  {id:4, category:"水力発電", topic:"揚水発電", important:true, level:"基本",
+    question:"純揚水式発電所の主な役割として「最も適切」なものはどれか。",
+    choices:[
+      "ベースロードの安定供給",
+      "電力系統の需給変動に応じたピーク調整・周波数調整",
+      "上水道用水の確保",
+      "河川流量の長期平準化"
+    ],
+    answer:1,
+    explanation:"純揚水式は自然流入が乏しく、夜間など軽負荷時の余剰電力で揚水し、ピーク時に発電する。近年は再エネ変動の調整力としても重要性が高い。"},
+  {id:5, category:"水力発電", topic:"水車選定", important:false, level:"基本",
+    question:"次のうち、有効落差が極めて高く（数百 m 以上）流量が小さい地点に最も適する水車はどれか。",
+    choices:[
+      "カプラン水車",
+      "フランシス水車",
+      "ペルトン水車",
+      "デリア水車"
+    ],
+    answer:2,
+    explanation:"ペルトン水車は衝動水車で、高落差・低流量の地点に適する。低落差・大流量にはカプラン、中間域はフランシスが用いられる。"},
+  {id:6, category:"水力発電", topic:"発電出力", important:false, level:"応用",
+    question:"有効落差 100 m、使用水量 20 m^3/s、水車効率 0.90、発電機効率 0.95 のとき、発電端出力に最も近い値はどれか。",
+    choices:[
+      "約 14.0 MW",
+      "約 16.8 MW",
+      "約 18.6 MW",
+      "約 20.4 MW"
+    ],
+    answer:1,
+    explanation:"P = 9.8 × Q × H × ηw × ηg = 9.8 × 20 × 100 × 0.90 × 0.95 ≒ 16,758 kW ≒ 16.8 MW。"},
+
+  /* ---------- 火力発電 (8) ---------- */
+  {id:7, category:"火力発電", topic:"ランキンサイクル", important:true, level:"基本",
+    question:"基本ランキンサイクルの 4 過程の順序として正しいものはどれか。",
+    choices:[
+      "等圧加熱 → 断熱膨張 → 等圧放熱 → 断熱圧縮",
+      "断熱膨張 → 等圧加熱 → 断熱圧縮 → 等圧放熱",
+      "断熱圧縮 → 等圧加熱 → 断熱膨張 → 等圧放熱",
+      "等圧放熱 → 断熱圧縮 → 等圧加熱 → 断熱膨張"
+    ],
+    answer:2,
+    explanation:"基本ランキンは「給水ポンプによる断熱圧縮 → ボイラでの等圧加熱 → タービンでの断熱膨張 → 復水器での等圧放熱」の順。"},
+  {id:8, category:"火力発電", topic:"再熱・再生", important:true, level:"応用",
+    question:"再熱再生サイクルにおける再熱の主な目的として「最も適切」なものはどれか。",
+    choices:[
+      "復水器真空度を高める",
+      "低圧タービン排気の湿り度を低減し、翼侵食を防ぐとともに熱効率を高める",
+      "給水温度を下げて燃焼効率を高める",
+      "蒸気使用量を減らし燃料費を下げる"
+    ],
+    answer:1,
+    explanation:"再熱は高圧タービン排気をボイラに戻して再加熱し、低圧タービン入口蒸気を過熱状態に戻すことで膨張線上の湿り度を抑え、翼侵食低減と熱効率向上を両立させる。"},
+  {id:9, category:"火力発電", topic:"コンバインドサイクル", important:true, level:"応用",
+    question:"コンバインドサイクル発電（CC）の熱効率が単独火力に比して高い主因として「最も適切」なものはどれか。",
+    choices:[
+      "ガスタービンと蒸気タービンを直結し回転損失を抑えるため",
+      "ガスタービンの高温排ガスを排熱回収ボイラで蒸気として再利用するため",
+      "復水器を不要にできるため",
+      "発電機の極数を増やせるため"
+    ],
+    answer:1,
+    explanation:"CC は高温入口・低温排気のブレイトン（GT）と低温入口・低温排気のランキン（ST）を排熱回収ボイラ（HRSG）で連結し、熱落差を二段階で利用するため高効率となる。"},
+  {id:10, category:"火力発電", topic:"ボイラ効率", important:false, level:"応用",
+    question:"ボイラ効率を低下させる損失として「最も寄与が大きい」項目はどれか。",
+    choices:[
+      "放散熱損失",
+      "未燃損失",
+      "排ガス損失",
+      "ブロー損失"
+    ],
+    answer:2,
+    explanation:"近代ボイラの損失で最も大きいのは排ガス顕熱損失。排ガス温度低減と空気予熱器の高性能化が効率改善の鍵となる。"},
+  {id:11, category:"火力発電", topic:"復水器真空", important:false, level:"応用",
+    question:"復水器の真空度が低下したときに発生する現象として「不適切」なものはどれか。",
+    choices:[
+      "タービン排気圧の上昇により熱落差が減少する",
+      "サイクル熱効率が低下する",
+      "復水器内冷却水温度が上昇する一因となり得る",
+      "タービン軸受の油圧が直接低下する"
+    ],
+    answer:3,
+    explanation:"復水器真空度低下は熱落差・効率に直接影響するが、タービン軸受油圧は独立した潤滑系で制御されるため真空度低下の直接影響ではない。"},
+  {id:12, category:"火力発電", topic:"燃焼制御", important:false, level:"基本",
+    question:"NOx 発生抑制のための「最も効果が薄い」対策はどれか。",
+    choices:[
+      "二段燃焼",
+      "排ガス再循環（EGR）",
+      "低 NOx バーナの採用",
+      "燃焼空気比を大幅に上げる"
+    ],
+    answer:3,
+    explanation:"空気比を上げると過剰酸素により Thermal NOx 生成が促進されやすく逆効果。NOx 抑制は低温・低酸素・短滞留時間化が原則。"},
+  {id:13, category:"火力発電", topic:"超々臨界圧", important:false, level:"難問",
+    question:"超々臨界圧（USC）発電プラントの主蒸気条件として最も近い組み合わせはどれか。",
+    choices:[
+      "16 MPa / 538°C",
+      "24 MPa / 600°C 級",
+      "10 MPa / 510°C",
+      "30 MPa / 720°C"
+    ],
+    answer:1,
+    explanation:"国内 USC は概ね 24〜25 MPa 級、主蒸気温度 600°C 級（再熱 600〜620°C）で運用される。10/16 MPa は亜臨界・超臨界の旧型、30/720 は次世代 A-USC の目標値。"},
+  {id:14, category:"火力発電", topic:"CO2回収", important:false, level:"難問",
+    question:"火力発電所での CCS（CO2 回収・貯留）の方式として「燃焼後回収」の特徴として最も適切なものはどれか。",
+    choices:[
+      "純酸素燃焼により排ガス中 CO2 濃度を高めてから回収する",
+      "既設プラントへの後付けが比較的容易で、アミン吸収液による化学吸収が代表的方式",
+      "燃料を改質して水素と CO2 に分離してから燃焼する",
+      "排ガス中の窒素を主成分として回収する"
+    ],
+    answer:1,
+    explanation:"燃焼後回収はアミン系吸収液で排ガス中 CO2 を分離する方式。既設の後付けに適するが再生エネルギーを要し送電端効率を 7〜10% ポイント低下させる。"},
+
+  /* ---------- 原子力発電 (4) ---------- */
+  {id:15, category:"原子力発電", topic:"PWR/BWR", important:true, level:"基本",
+    question:"PWR（加圧水型）と BWR（沸騰水型）の比較として「正しい」記述はどれか。",
+    choices:[
+      "PWR では炉心で蒸気を発生させ、直接タービンへ送る",
+      "BWR では蒸気発生器を介して二次系へ熱を伝える",
+      "PWR は一次系を加圧して炉心で沸騰させず、蒸気発生器で二次系蒸気を発生させる",
+      "BWR の方が一次系圧力が PWR より高い"
+    ],
+    answer:2,
+    explanation:"PWR は一次系を約 15.5 MPa に加圧して沸騰を抑え、蒸気発生器で二次系蒸気を発生。BWR は炉心で直接沸騰させた蒸気をタービンへ送る直接サイクル。"},
+  {id:16, category:"原子力発電", topic:"燃料サイクル", important:false, level:"応用",
+    question:"軽水炉燃料サイクルにおける「ウラン濃縮」の目的として最も適切なものはどれか。",
+    choices:[
+      "U-238 の割合を高める",
+      "U-235 の割合を天然の 0.7% から数 % まで高める",
+      "Pu-239 の生成を促進する",
+      "燃料棒の機械強度を高める"
+    ],
+    answer:1,
+    explanation:"天然ウランの U-235 比率 0.7% を軽水炉用の 3〜5% 程度まで高める工程を濃縮という。BWR/PWR とも低濃縮ウランを使用する。"},
+  {id:17, category:"原子力発電", topic:"制御材", important:false, level:"応用",
+    question:"PWR の出力制御で「短期的反応度調整」に主として用いられるものはどれか。",
+    choices:[
+      "制御棒（B4C 等）",
+      "減速材温度（負温度係数）",
+      "ホウ素濃度（ケミカルシム）",
+      "燃料棒の物理交換"
+    ],
+    answer:0,
+    explanation:"PWR では中期〜長期の反応度調整にホウ素濃度（ケミカルシム）、短期・即応的調整に制御棒挿入を用いる。負温度係数は自己制御性として作用する固有特性。"},
+  {id:18, category:"原子力発電", topic:"安全系統", important:false, level:"応用",
+    question:"原子力発電所の深層防護（Defence in Depth）の考え方として「最も適切」なものはどれか。",
+    choices:[
+      "単一の高信頼性系統に集中投資する",
+      "異常防止・異常検知抑制・事故拡大防止・影響緩和の多重防護を段階的に設ける",
+      "事故発生時のみ安全系統を起動する設計とする",
+      "運転員の判断のみで対応できる設計に集約する"
+    ],
+    answer:1,
+    explanation:"深層防護は段階的な防護壁（多重・多様性）を設け、各層の独立性を確保することで重大事故への進展を防ぐ国際的安全設計原則。"},
+
+  /* ---------- 再生可能エネルギー (3) ---------- */
+  {id:19, category:"再生可能エネルギー", topic:"風力出力制御", important:false, level:"応用",
+    question:"風力発電機の定格風速超過時の出力制御方式に関する記述として「最も適切」なものはどれか。",
+    choices:[
+      "ピッチ制御は翼の取付角を変えて空力的に出力を抑制する",
+      "ストール制御は翼角を能動的に変える方式である",
+      "ピッチ制御は翼形状を固定し失速で抑制する",
+      "可変速運転では発電機回転数を必ず系統周波数に同期させる"
+    ],
+    answer:0,
+    explanation:"ピッチ制御は翼の取付角（ピッチ角）を能動的に変えて空力的に出力制限する。ストール制御は翼角固定で迎え角増加に伴う失速を利用する受動方式。"},
+  {id:20, category:"再生可能エネルギー", topic:"太陽光PCS", important:true, level:"応用",
+    question:"太陽光発電のパワーコンディショナ（PCS）が常時行う制御として「最も適切でない」ものはどれか。",
+    choices:[
+      "最大電力点追従（MPPT）制御",
+      "系統連系保護（単独運転検出）",
+      "直流→交流変換と力率制御",
+      "高圧蒸気の流量制御"
+    ],
+    answer:3,
+    explanation:"PCS の役割は MPPT、DC/AC 変換、系統連系保護、力率・無効電力制御等。蒸気流量制御は火力プラント側の制御で関係ない。"},
+  {id:21, category:"再生可能エネルギー", topic:"系統連系", important:false, level:"難問",
+    question:"再エネ大量導入時の系統課題として「最も関連性が薄い」ものはどれか。",
+    choices:[
+      "慣性力（同期慣性）の低下",
+      "下げ代不足による余剰電力問題",
+      "周波数調整能力（LFC）容量の確保",
+      "需要家側給水ポンプの揚程不足"
+    ],
+    answer:3,
+    explanation:"再エネ拡大の系統課題は同期慣性低下、需給バランス（特に下げ代）、調整力確保、電圧管理等。給水ポンプ揚程は需要家設備の話題で系統側の課題ではない。"},
+
+  /* ---------- 変電・変圧器 (7) ---------- */
+  {id:22, category:"変電・変圧器", topic:"Y-Δ結線", important:true, level:"応用",
+    question:"三相変圧器の Y-Δ 結線の特徴として「適切でない」ものはどれか。",
+    choices:[
+      "Δ側に第3調波電流が循環し、起電力波形を正弦波に近づける",
+      "Y側中性点を接地でき、地絡保護がしやすい",
+      "Y側とΔ側の線間電圧の位相差は 30°（または -30°）となる",
+      "両側とも中性点接地が必須となる"
+    ],
+    answer:3,
+    explanation:"Δ側は中性点が存在せず接地できない。Y-Δ では Y 側のみ中性点を取り出し接地可能。Y-Δ は系統間の位相 30° ずれと第3調波循環で広く用いられる。"},
+  {id:23, category:"変電・変圧器", topic:"並行運転", important:true, level:"応用",
+    question:"三相変圧器の並行運転に必要な条件として「該当しない」ものはどれか。",
+    choices:[
+      "定格電圧（変圧比）が等しい",
+      "%インピーダンスが等しい（または近い）",
+      "結線方式（位相角群）が一致する",
+      "鉄心の材質が同一メーカ製である"
+    ],
+    answer:3,
+    explanation:"並行運転の必要条件は変圧比一致、%Z 一致、結線群（位相）一致、抵抗対リアクタンス比一致。鉄心材質のメーカ一致は要件ではない。"},
+  {id:24, category:"変電・変圧器", topic:"%インピーダンス", important:false, level:"応用",
+    question:"%インピーダンスを用いる主な利点として「最も適切」なものはどれか。",
+    choices:[
+      "電圧階級が異なっても基準容量を統一すれば回路計算を一元化できる",
+      "鉄損を直接算出できる",
+      "巻線温度を測定できる",
+      "中性点接地抵抗値を直接表せる"
+    ],
+    answer:0,
+    explanation:"%Z は基準容量で換算するため、複数電圧階級にまたがる系統の短絡電流計算等を統一的に扱える。短絡計算で頻用される。"},
+  {id:25, category:"変電・変圧器", topic:"短絡電流", important:true, level:"応用",
+    question:"基準容量 100 MVA、合成%Z = 20% の母線における三相短絡電流 [pu] として正しいものはどれか。",
+    choices:[
+      "2.0 pu",
+      "5.0 pu",
+      "0.2 pu",
+      "0.5 pu"
+    ],
+    answer:1,
+    explanation:"I_s [pu] = 100/%Z = 100/20 = 5.0 pu。% 表示の短絡計算の基本式。"},
+  {id:26, category:"変電・変圧器", topic:"調相設備", important:true, level:"応用",
+    question:"系統電圧調整に用いる調相設備のうち「連続かつ高速」に無効電力を変化させられるものはどれか。",
+    choices:[
+      "電力用コンデンサ（SC）",
+      "分路リアクトル（ShR）",
+      "同期調相機（SC：Synchronous Condenser）",
+      "静止型無効電力補償装置（SVC）"
+    ],
+    answer:3,
+    explanation:"SVC はサイリスタ制御により無効電力を連続・高速可変。SC/ShR は段階投入、同期調相機は連続だが応答が遅い。STATCOM はさらに高速。"},
+  {id:27, category:"変電・変圧器", topic:"保護リレー", important:false, level:"応用",
+    question:"変圧器の内部故障保護として「主保護」に該当するものはどれか。",
+    choices:[
+      "比率差動継電器（87T）",
+      "過電流継電器（51）",
+      "地絡方向継電器（67G）",
+      "不足電圧継電器（27）"
+    ],
+    answer:0,
+    explanation:"87T（比率差動）は変圧器内部短絡を一次・二次電流差で検出する主保護。51 は後備、67G は地絡保護、27 は不足電圧検出で目的が異なる。"},
+  {id:28, category:"変電・変圧器", topic:"避雷器", important:false, level:"基本",
+    question:"避雷器（酸化亜鉛形）の基本性能として「最も重要」な特性はどれか。",
+    choices:[
+      "雷サージで動作して機器を保護し、続流を遮断する非線形抵抗特性",
+      "定常時に大電流を常時流す抵抗特性",
+      "周波数フィルタリング機能",
+      "高調波の発生機能"
+    ],
+    answer:0,
+    explanation:"ZnO 避雷器は強い非線形 V-I 特性により、サージ時に低抵抗、定常時に高抵抗となり、続流遮断不要で機器を保護する。"},
+
+  /* ---------- 送電 (8) ---------- */
+  {id:29, category:"送電", topic:"安定度", important:true, level:"応用",
+    question:"電力系統の「定態安定度」を高める方策として「不適切」なものはどれか。",
+    choices:[
+      "送電線の電気的距離（リアクタンス）を小さくする",
+      "中間開閉所を設け系統分割性を高める",
+      "発電機励磁を弱め同期化力を低下させる",
+      "直列コンデンサで線路リアクタンスを補償する"
+    ],
+    answer:2,
+    explanation:"励磁を弱めると内部誘起電圧が下がり同期化力が低下、安定度悪化。安定度向上にはリアクタンス低減、強励磁、AVR/PSS、直列補償等が有効。"},
+  {id:30, category:"送電", topic:"フェランチ効果", important:true, level:"応用",
+    question:"長距離送電線の軽負荷時にみられるフェランチ効果について「正しい」記述はどれか。",
+    choices:[
+      "受電端電圧が送電端電圧より高くなる現象である",
+      "送電端電圧が受電端電圧より高くなる現象である",
+      "周波数が定格より上昇する現象である",
+      "電流が逆方向に流れる現象である"
+    ],
+    answer:0,
+    explanation:"線路の対地静電容量による進相電流が線路リアクタンスを流れ、受電端電圧を昇圧させる。軽負荷の長距離・地中ケーブル系統で顕著。対策に分路リアクトル。"},
+  {id:31, category:"送電", topic:"コロナ", important:false, level:"応用",
+    question:"超高圧架空送電線でコロナ損を低減する対策として「最も適切」なものはどれか。",
+    choices:[
+      "多導体方式（複導体・4導体等）を採用し電線表面電界を下げる",
+      "電線径を細くし軽量化する",
+      "電線間隔を極端に狭くする",
+      "電線表面を粗面化する"
+    ],
+    answer:0,
+    explanation:"多導体化により等価半径が増大し電線表面電界が低下、コロナ開始電圧が上昇する。500 kV 級では 4〜6 導体が標準。"},
+  {id:32, category:"送電", topic:"誘導障害", important:false, level:"応用",
+    question:"通信線に対する電磁誘導障害を抑制する対策として「不適切」なものはどれか。",
+    choices:[
+      "送電線と通信線の離隔距離を増す",
+      "中性点接地抵抗を高くし地絡電流を抑制する",
+      "高速地絡遮断を実施し継続時間を短縮する",
+      "通信線の対地絶縁を意図的に低くする"
+    ],
+    answer:3,
+    explanation:"対地絶縁を下げると感応電圧で機器が損傷する。誘導障害対策は離隔・接地電流抑制・遮断時間短縮・遮へい線などが基本。"},
+  {id:33, category:"送電", topic:"地中ケーブル", important:false, level:"応用",
+    question:"CV ケーブル（架橋ポリエチレン絶縁）の使用上の特徴として「不適切」なものはどれか。",
+    choices:[
+      "OF ケーブルに比べ充電電流が小さい",
+      "保守上、油補給などの常時メンテナンスが不要",
+      "難燃性に優れ、火災時にも自己消火性が高い",
+      "誘電体損が小さい"
+    ],
+    answer:2,
+    explanation:"架橋ポリエチレン（XLPE）自体は燃える性質を持ち、自己消火性が高いとは言えない。耐熱・電気特性は優れるが難燃化はシース材で工夫される。"},
+  {id:34, category:"送電", topic:"直流送電", important:false, level:"難問",
+    question:"高圧直流送電（HVDC）が交流送電に対して有利となる用途として「最も該当しないもの」はどれか。",
+    choices:[
+      "周波数の異なる系統間連系",
+      "長距離大容量海底ケーブル送電",
+      "潮流の制御性が必要な系統連系",
+      "短距離・小容量の都市配電"
+    ],
+    answer:3,
+    explanation:"HVDC は変換設備コスト高で短距離・小容量には不利。長距離架空・海底ケーブル・非同期連系・潮流制御等で交流に対する優位性を発揮する。"},
+  {id:35, category:"送電", topic:"安定度向上策", important:false, level:"難問",
+    question:"系統の過渡安定度向上策として「最も効果が小さい」ものはどれか。",
+    choices:[
+      "高速再閉路（HSR）の採用",
+      "発電機の慣性定数を下げる",
+      "電力系統安定化装置（PSS）の付加",
+      "中間開閉所での高速遮断"
+    ],
+    answer:1,
+    explanation:"慣性定数を下げると擾乱に対する加速エネルギー貯蔵が減り、加速度が増大して安定度は悪化する。同期化力・慣性は大きい方が安定度に有利。"},
+  {id:36, category:"送電", topic:"線路電圧降下", important:false, level:"応用",
+    question:"送電線の電圧降下（簡易式）ΔV ≒ I(R cosθ + X sinθ) において、力率改善（cosθ→1）を行うと電圧降下は概ねどう変化するか。",
+    choices:[
+      "X 項が小さくなり、ΔV は減少する傾向となる",
+      "R 項が増大し、ΔV は増加する",
+      "周波数変動により予測不能",
+      "全く変化しない"
+    ],
+    answer:0,
+    explanation:"sinθ → 0 で X 項が小さくなり ΔV は減少する傾向。架空送電では一般に X >> R のため力率改善の電圧降下抑制効果は大きい。"},
+
+  /* ---------- 配電 (4) ---------- */
+  {id:37, category:"配電", topic:"配電方式", important:false, level:"基本",
+    question:"高圧配電線の三相 3 線式と三相 4 線式の比較で「正しい」ものはどれか。",
+    choices:[
+      "4 線式は中性線が無いため平衡負荷専用である",
+      "3 線式は単相・三相両用に簡便だが、不平衡時の中性線電流は供給できない",
+      "4 線式は中性線により単相負荷を中性線・線間に直接接続できる",
+      "3 線式の方が常に経済的である"
+    ],
+    answer:2,
+    explanation:"三相 4 線式は中性線を持ち、相電圧で単相負荷を直接供給可能。不平衡負荷の許容性も高い。3 線式は線間電圧のみの利用となる。"},
+  {id:38, category:"配電", topic:"電圧降下", important:true, level:"応用",
+    question:"配電線の電圧管理上、需要家受電点電圧を維持するために配電用変電所側で行う制御として「主流」のものはどれか。",
+    choices:[
+      "需要家ごとの個別 SVR 設置のみ",
+      "送出電圧を負荷状況に応じ自動調整する LRT（負荷時タップ切換変圧器）制御",
+      "需要家側変圧器のタップを毎日手動切り替え",
+      "周波数を意図的に変動させる"
+    ],
+    answer:1,
+    explanation:"配電用変電所では LRT による自動電圧調整（プログラム送出電圧制御）が主流。長亘配電線では加えて SVR を中間に設置する。"},
+  {id:39, category:"配電", topic:"地絡保護", important:false, level:"応用",
+    question:"6.6 kV 非接地系配電系統の地絡保護で用いられる代表的継電器の組み合わせはどれか。",
+    choices:[
+      "DGR（地絡方向継電器）＋ ZCT（零相変流器）",
+      "OCR（過電流継電器）のみ",
+      "UV（不足電圧継電器）のみ",
+      "差動継電器のみ"
+    ],
+    answer:0,
+    explanation:"非接地系の地絡は ZCT で零相電流を検出し、零相電圧（ZPD/EVT）と組合せ DGR で方向判別。OCR のみでは検出感度不足。"},
+  {id:40, category:"配電", topic:"力率改善", important:false, level:"基本",
+    question:"需要家における力率改善（進相コンデンサ設置）の主な効果として「該当しないもの」はどれか。",
+    choices:[
+      "電力料金における力率割引適用",
+      "線路電流の低減による損失低減",
+      "電圧降下の改善",
+      "受電点の有効電力消費の直接削減"
+    ],
+    answer:3,
+    explanation:"進相コンデンサは無効電力を補償するもので、有効電力（kWh）自体は直接削減しない。料金面では基本料金の力率割引、損失低減、電圧改善が効果。"},
+
+  /* ---------- 電力系統・安定度 (6) ---------- */
+  {id:41, category:"電力系統", topic:"周波数制御", important:true, level:"応用",
+    question:"電力系統の周波数制御において、ガバナフリー運転（GF）が担う役割として「最も適切」なものはどれか。",
+    choices:[
+      "数秒〜数十秒の短周期需給変動への即応的応動",
+      "数十分〜数時間の経済負荷配分（EDC）",
+      "日間運用計画立案",
+      "翌日断面の発電機起動停止計画"
+    ],
+    answer:0,
+    explanation:"GF は発電機調速機の速度垂下特性による即応応動で、秒オーダの変動を吸収。LFC が数分オーダ、EDC が十分以上のオーダを担う。"},
+  {id:42, category:"電力系統", topic:"LFC/EDC", important:false, level:"応用",
+    question:"AGC（Automatic Generation Control）の構成要素 LFC と EDC に関する記述として「正しい」ものはどれか。",
+    choices:[
+      "LFC は経済性最適化、EDC は周波数偏差是正を担う",
+      "LFC は周波数偏差・連系線潮流偏差を是正し、EDC は燃料費等を最小化する",
+      "LFC と EDC は同一機能の別名である",
+      "EDC は秒オーダで応動する高速制御である"
+    ],
+    answer:1,
+    explanation:"LFC（負荷周波数制御）は ACE（周波数＋連系線偏差）を最小化、EDC（経済負荷配分）は等λ条件等で燃料費を最小化する。両者は AGC の構成要素として階層的に動作する。"},
+  {id:43, category:"電力系統", topic:"短絡容量", important:false, level:"応用",
+    question:"短絡容量（短絡 MVA）が大きい系統の特徴として「最も適切」なものはどれか。",
+    choices:[
+      "電圧変動率が小さく系統が硬い",
+      "発電機の同期化力が小さい",
+      "再エネ連系時の電圧変動が常に大きい",
+      "保護リレー協調が容易になる傾向のみで電圧安定性とは無関係"
+    ],
+    answer:0,
+    explanation:"短絡容量大 = 系統インピーダンス小 = 電圧変動率小（硬い系統）。需要・電源変動に対し電圧が乱れにくい。一方で遮断器の遮断容量が必要になる。"},
+  {id:44, category:"電力系統", topic:"無効電力管理", important:false, level:"応用",
+    question:"系統の電圧管理に関する記述として「不適切」なものはどれか。",
+    choices:[
+      "電圧は基本的に「無効電力」のローカル授受で制御される",
+      "発電機 AVR は端子電圧一定制御により無効電力を可変に供給する",
+      "電圧は周波数と異なり広域一律ではなく地点ごとに値が異なる",
+      "電圧低下時には遠隔の発電機励磁よりも近接の調相設備投入の方が効果が小さい"
+    ],
+    answer:3,
+    explanation:"電圧管理は近接調相のほうが伝送ロスを介さず効果的（電圧は局所性が強い）。AVR・SVC・コンデンサ・LRT 等を用いた地点近接の無効電力制御が原則。"},
+  {id:45, category:"電力系統", topic:"電圧崩壊", important:false, level:"難問",
+    question:"電圧崩壊（Voltage Collapse）に関する記述として「最も適切」なものはどれか。",
+    choices:[
+      "無効電力供給能力の枯渇により受電端電圧が回復不能に低下する現象",
+      "周波数の急上昇により系統が分離する現象",
+      "短絡発生で電圧が一瞬ゼロになる現象",
+      "高調波歪により波形が崩壊する現象"
+    ],
+    answer:0,
+    explanation:"電圧崩壊は重負荷時の無効電力源枯渇に伴う P-V カーブのノーズ点付近で発生し、対策不在では制御不能な電圧低下に至る。広域停電要因の一つ。"},
+  {id:46, category:"電力系統", topic:"同期化力", important:false, level:"難問",
+    question:"同期発電機の同期化力 Ps = (E·V/X) cosδ について、δ（内部相差角）の増大に伴う Ps の変化として正しいものはどれか。",
+    choices:[
+      "δ が 0° で 0、90° で最大",
+      "δ が 0° で最大、90° で 0",
+      "δ に無関係で常に一定",
+      "δ が 180° で最大"
+    ],
+    answer:1,
+    explanation:"同期化力 Ps = dP/dδ は P-δ 曲線の傾き。Ps = (EV/X)cosδ より δ=0 で最大、δ=90° で 0 となり、定態安定限界 δ=90° を超えると同期外れ。"},
+
+  /* ---------- 電気材料・絶縁 (4) ---------- */
+  {id:47, category:"電気材料", topic:"絶縁油", important:false, level:"応用",
+    question:"変圧器絶縁油（鉱油）の主機能として「最も該当しない」ものはどれか。",
+    choices:[
+      "巻線・鉄心の冷却",
+      "絶縁強度の確保",
+      "アークの消弧（油遮断器を含む）",
+      "巻線の機械的剛性の付与"
+    ],
+    answer:3,
+    explanation:"絶縁油の機能は冷却・絶縁・消弧。機械的剛性は絶縁紙・支持構造・くさび等が分担し、油はあくまで流動液体である。"},
+  {id:48, category:"電気材料", topic:"SF6", important:true, level:"応用",
+    question:"SF6 ガス絶縁開閉装置（GIS）の特徴として「不適切」なものはどれか。",
+    choices:[
+      "SF6 は同一気圧の空気と比べ絶縁強度が高く小型化に有利",
+      "SF6 は地球温暖化係数（GWP）が高く、漏洩管理が重要",
+      "GIS は屋外開放型と比べ設置面積を大幅に縮小できる",
+      "SF6 はオゾン層破壊物質として規制対象である"
+    ],
+    answer:3,
+    explanation:"SF6 はオゾン層破壊物質ではない（塩素を含まない）。一方で GWP が CO2 の約 23,500 倍と非常に高く、京都議定書下で漏洩・回収管理の対象。"},
+  {id:49, category:"電気材料", topic:"磁性材料", important:false, level:"応用",
+    question:"変圧器鉄心に方向性電磁鋼板（方向性ケイ素鋼板）を用いる主目的として「最も適切」なものはどれか。",
+    choices:[
+      "磁化容易方向に磁束を通すことで鉄損を低減する",
+      "渦電流を増やしてヒステリシス損を抑える",
+      "透磁率を低くして励磁電流を増やす",
+      "機械強度を高めて振動を防ぐ"
+    ],
+    answer:0,
+    explanation:"方向性電磁鋼板は圧延方向に磁気的に異方性を持ち、その方向に磁化することでヒステリシス・渦電流損を低減。アモルファス磁性材料は更に低損失。"},
+  {id:50, category:"電気材料", topic:"誘電体損", important:false, level:"難問",
+    question:"高電圧 CV ケーブルの誘電体損 Wd = ω C V^2 tanδ に関する記述として「正しい」ものはどれか。",
+    choices:[
+      "電圧の 1 乗に比例する",
+      "周波数を上げると比例的に増加する",
+      "誘電正接 tanδ が小さいほど大きくなる",
+      "ケーブル長に反比例する"
+    ],
+    answer:1,
+    explanation:"誘電体損は ω = 2πf に比例し周波数増で増加。電圧は 2 乗、静電容量はケーブル長に比例（よって損失も長さに比例）、tanδ は小さいほど損失も小さい。"}
+];
+
+/* =========================================================
+   問題データ統合（既存 + 電験王R04-R07）
+   ========================================================= */
+const ALL_QUESTIONS = QUESTIONS.concat(
+  Array.isArray(window.QUESTIONS_EXT) ? window.QUESTIONS_EXT : []
+);
+
+/* =========================================================
+   状態
+   ========================================================= */
+const state = {
+  pool: [],
+  index: 0,
+  answers: [],
+  config: null,
+  answered: false,
+};
+
+const $ = (sel) => document.querySelector(sel);
+const setupEl = $("#setup");
+const quizEl = $("#quiz");
+const resultEl = $("#result");
+const topicMapEl = $("#topic-map");
+
+/* =========================================================
+   ユーティリティ
+   ========================================================= */
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function withShuffledChoices(q) {
+  const indices = shuffle([0, 1, 2, 3]);
+  const newChoices = indices.map(i => q.choices[i]);
+  const newAnswer = indices.indexOf(q.answer);
+  return { ...q, choices: newChoices, answer: newAnswer };
+}
+
+function prepareQuestions(arr) {
+  return arr.map(withShuffledChoices);
+}
+
+function listCategories() {
+  const seen = new Map();
+  for (const q of ALL_QUESTIONS) {
+    seen.set(q.category, (seen.get(q.category) || 0) + 1);
+  }
+  return Array.from(seen.entries());
+}
+
+function buildPool(cfg) {
+  let base = ALL_QUESTIONS.slice();
+  if (cfg.level && cfg.level !== "all") {
+    base = base.filter(q => q.level === cfg.level);
+  }
+  let ordered;
+  if (cfg.mode === "category") {
+    const byCat = new Map();
+    for (const q of base) {
+      if (!byCat.has(q.category)) byCat.set(q.category, []);
+      byCat.get(q.category).push(q);
+    }
+    ordered = [];
+    for (const [, arr] of byCat) {
+      for (const q of shuffle(arr)) ordered.push(q);
+    }
+  } else {
+    ordered = shuffle(base);
+  }
+  let n;
+  if (cfg.count === "all") n = ordered.length;
+  else {
+    n = parseInt(cfg.count, 10);
+    if (!Number.isFinite(n) || n <= 0) n = ordered.length;
+  }
+  return ordered.slice(0, Math.min(n, ordered.length));
+}
+
+function updatePoolInfo() {
+  const cfg = readSetupConfig();
+  const pool = buildPool(cfg);
+  $("#pool-info").textContent = `条件に合致する出題候補：${pool.length} 問（総問題数 ${ALL_QUESTIONS.length} ／ うち電験王R04-R07: ${(window.QUESTIONS_EXT || []).length} 問）`;
+}
+
+function readSetupConfig() {
+  return {
+    level: $("#f-level").value,
+    count: $("#f-count").value,
+    mode: $("#f-mode").value,
+    source: "setup",
+  };
+}
+
+/* =========================================================
+   画面表示
+   ========================================================= */
+function showSetup() {
+  setupEl.classList.remove("hidden");
+  quizEl.classList.add("hidden");
+  resultEl.classList.add("hidden");
+  topicMapEl.classList.add("hidden");
+  updatePoolInfo();
+}
+function showQuiz() {
+  setupEl.classList.add("hidden");
+  quizEl.classList.remove("hidden");
+  resultEl.classList.add("hidden");
+  topicMapEl.classList.add("hidden");
+}
+function showResult() {
+  setupEl.classList.add("hidden");
+  quizEl.classList.add("hidden");
+  resultEl.classList.remove("hidden");
+  topicMapEl.classList.add("hidden");
+}
+function showTopicMap() {
+  setupEl.classList.add("hidden");
+  quizEl.classList.add("hidden");
+  resultEl.classList.add("hidden");
+  topicMapEl.classList.remove("hidden");
+  renderTopicMap();
+}
+
+/* =========================================================
+   カテゴリミニテスト
+   ========================================================= */
+function renderCategoryButtons() {
+  const grid = $("#cat-grid");
+  grid.innerHTML = "";
+  for (const [name, count] of listCategories()) {
+    const btn = document.createElement("button");
+    btn.className = "cat-btn";
+    btn.innerHTML = `<span class="cat-name">${escapeHtml(name)}</span><span class="cat-meta">登録 ${count} 問 / 出題 ${Math.min(5, count)} 問</span>`;
+    btn.addEventListener("click", () => startCategoryMini(name));
+    grid.appendChild(btn);
+  }
+}
+function startCategoryMini(category) {
+  const items = ALL_QUESTIONS.filter(q => q.category === category);
+  const pool = shuffle(items).slice(0, Math.min(5, items.length));
+  state.config = { level: "all", count: String(pool.length), mode: "random", source: "category", category };
+  state.pool = prepareQuestions(pool);
+  state.index = 0;
+  state.answers = [];
+  state.answered = false;
+  showQuiz();
+  renderQuestion();
+}
+
+/* =========================================================
+   クイズ進行
+   ========================================================= */
+function startQuiz() {
+  const cfg = readSetupConfig();
+  const pool = buildPool(cfg);
+  if (pool.length === 0) {
+    alert("条件に合致する問題がありません。フィルターを変更してください。");
+    return;
+  }
+  state.config = cfg;
+  state.pool = prepareQuestions(pool);
+  state.index = 0;
+  state.answers = [];
+  state.answered = false;
+  showQuiz();
+  renderQuestion();
+}
+
+function renderQuestion() {
+  state.answered = false;
+  const q = state.pool[state.index];
+  const total = state.pool.length;
+  const cur = state.index + 1;
+
+  $("#bar").style.width = `${((cur - 1) / total) * 100}%`;
+  $("#prog-text").textContent = `${cur} / ${total}`;
+  const modeLabel =
+    state.config.source === "category" ? `カテゴリミニテスト：${state.config.category}` :
+    state.config.source === "wrong" ? "誤答のみ再出題" :
+    `${state.config.mode === "category" ? "カテゴリ順" : "ランダム"} / 難易度 ${state.config.level === "all" ? "すべて" : state.config.level}`;
+  $("#mode-text").textContent = modeLabel;
+
+  updateScorePill();
+
+  const badges = $("#badges");
+  badges.innerHTML = "";
+  badges.appendChild(makeBadge(q.category, "cat"));
+  badges.appendChild(makeBadge(q.topic, "topic"));
+  badges.appendChild(makeBadge(q.level, "level-" + q.level));
+  if (q.important) badges.appendChild(makeBadge("重要", "important"));
+  if (q.priority) {
+    const label = q.priority === "S" ? "優先S(超頻出)" :
+                  q.priority === "A" ? "優先A(頻出)" :
+                  q.priority === "B" ? "優先B" : "優先C";
+    badges.appendChild(makeBadge(label, "prio-" + q.priority));
+  }
+  if (q.source && q.source.year) {
+    const src = `${q.source.year} 問${q.source.q}` + (q.source.blank ? `-(${q.source.blank})` : "");
+    badges.appendChild(makeBadge(src, "source"));
+  }
+
+  $("#q-text").textContent = `Q${cur}. ${q.question}`;
+
+  // 自己説明ヒント（軽量版）: 回答前に開ける思考の取っ手
+  renderSelfExplain(q);
+
+  const choicesEl = $("#choices");
+  choicesEl.innerHTML = "";
+  const letters = ["A", "B", "C", "D"];
+  q.choices.forEach((c, i) => {
+    const btn = document.createElement("button");
+    btn.className = "choice";
+    btn.innerHTML = `<span class="idx">${letters[i]}</span><span></span>`;
+    btn.querySelector("span:last-child").textContent = c;
+    btn.addEventListener("click", () => onChoose(i));
+    choicesEl.appendChild(btn);
+  });
+
+  const fb = $("#feedback");
+  fb.classList.add("hidden");
+  fb.classList.remove("ok", "ng");
+  fb.innerHTML = "";
+  $("#btn-next").classList.add("hidden");
+}
+
+function makeBadge(text, cls) {
+  const span = document.createElement("span");
+  span.className = "badge " + cls;
+  span.textContent = text;
+  return span;
+}
+
+/* ---------- 自己説明モード（軽量版） ----------
+   回答前に「自分の言葉で説明してみる」プロンプトを表示。
+   入力内容は localStorage に保存。中身採点はせず、
+   入力したという事実だけで思考の足場掛けを促す。
+   2次試験対応の最小入口でもある。
+*/
+function renderSelfExplain(q) {
+  // 既存ノードがあれば削除（同じスロットを使う）
+  const existing = document.getElementById("self-explain-block");
+  if (existing) existing.remove();
+
+  const hint = q.selfExplainHint;
+  if (!hint) return;
+
+  const wrap = document.createElement("details");
+  wrap.id = "self-explain-block";
+  wrap.className = "self-explain";
+  const sid = q.source ? `${q.source.year}-Q${q.source.q}-${q.source.blank}` : `q${q.id}`;
+  const storeKey = "selfExplain:" + sid;
+  const saved = localStorage.getItem(storeKey) || "";
+
+  wrap.innerHTML = `
+    <summary>💡 自己説明モード（任意・回答前に開いて考えてみよう）</summary>
+    <div class="hint">${escapeHtml(hint)}</div>
+    <textarea id="se-input" placeholder="ここに自分の言葉で書いてみる（採点はしません。書いた事実だけで脳に効きます）"></textarea>
+    <div class="se-meta">入力は端末ローカルに自動保存されます。<span id="se-saved-info"></span></div>
+  `;
+
+  // 問題テキストの直後に挿入
+  const qText = document.getElementById("q-text");
+  qText.insertAdjacentElement("afterend", wrap);
+
+  const ta = wrap.querySelector("#se-input");
+  ta.value = saved;
+  const meta = wrap.querySelector("#se-saved-info");
+  if (saved) meta.textContent = `（前回保存: ${saved.length}文字）`;
+  ta.addEventListener("input", () => {
+    try { localStorage.setItem(storeKey, ta.value); } catch (e) {}
+    meta.textContent = `（保存中: ${ta.value.length}文字）`;
+  });
+}
+
+/* ---------- 解答後に出す追加学習ブロック ----------
+   why / whatIf / whenNot を簡潔に表示し、論点の輪郭を多面化する。
+*/
+function renderDeepBlocks(q) {
+  const blocks = [];
+  if (q.whyMatters) blocks.push(`<div class="db"><strong>なぜ重要？</strong> ${escapeHtml(q.whyMatters)}</div>`);
+  if (q.whatIf)     blocks.push(`<div class="db"><strong>もし〜だったら？</strong> ${escapeHtml(q.whatIf)}</div>`);
+  if (q.whenNot)    blocks.push(`<div class="db"><strong>適用限界（使わない場面）</strong> ${escapeHtml(q.whenNot)}</div>`);
+  if (q.macroTopic && q.frequency) {
+    const star = q.frequency >= 4 ? "★★★★" : q.frequency >= 3 ? "★★★" : q.frequency >= 2 ? "★★" : "★";
+    blocks.push(`<div class="db"><strong>マクロ論点</strong> ${escapeHtml(q.macroTopic)} ${star} (H23-R07 で ${q.frequency} 回)</div>`);
+  }
+  if (!blocks.length) return "";
+  return `<div class="deep-blocks">${blocks.join("")}</div>`;
+}
+
+function onChoose(picked) {
+  if (state.answered) return;
+  state.answered = true;
+  const q = state.pool[state.index];
+  const correct = picked === q.answer;
+  state.answers.push({ q, picked, correct });
+
+  const buttons = $("#choices").querySelectorAll(".choice");
+  buttons.forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.answer) b.classList.add("correct");
+    if (i === picked && !correct) b.classList.add("wrong");
+  });
+
+  const fb = $("#feedback");
+  fb.classList.remove("hidden", "ok", "ng");
+  fb.classList.add(correct ? "ok" : "ng");
+  const letters = ["A","B","C","D"];
+  const deepHtml = renderDeepBlocks(q);
+  fb.innerHTML = `
+    <div><span class="label">${correct ? "正解！" : "不正解"}</span>正解：${letters[q.answer]}. ${escapeHtml(q.choices[q.answer])}</div>
+    <div class="explain"><strong>解説：</strong>${escapeHtml(q.explanation).replace(/\n/g, "<br>")}</div>
+    ${deepHtml}
+  `;
+  $("#btn-next").classList.remove("hidden");
+  $("#btn-next").textContent = state.index + 1 >= state.pool.length ? "結果を見る" : "次の問題へ";
+  updateScorePill();
+}
+
+function onNext() {
+  if (state.index + 1 >= state.pool.length) { finishQuiz(); return; }
+  state.index++;
+  renderQuestion();
+}
+
+function updateScorePill() {
+  const total = state.pool.length;
+  const correct = state.answers.filter(a => a.correct).length;
+  $("#score-pill").textContent = `スコア ${correct} / ${total}`;
+}
+
+/* =========================================================
+   結果
+   ========================================================= */
+function finishQuiz() {
+  const total = state.answers.length;
+  const correct = state.answers.filter(a => a.correct).length;
+  const rate = total === 0 ? 0 : Math.round((correct / total) * 1000) / 10;
+
+  $("#r-correct").textContent = correct;
+  $("#r-total").textContent = total;
+  $("#r-rate").textContent = rate + "%";
+
+  const byCat = new Map();
+  for (const a of state.answers) {
+    const cat = a.q.category;
+    if (!byCat.has(cat)) byCat.set(cat, { total: 0, wrong: 0 });
+    const o = byCat.get(cat);
+    o.total++;
+    if (!a.correct) o.wrong++;
+  }
+  const rows = Array.from(byCat.entries())
+    .map(([cat, o]) => ({ cat, total: o.total, wrong: o.wrong, rate: o.total ? Math.round((o.total - o.wrong) / o.total * 100) : 0 }))
+    .filter(r => r.wrong > 0)
+    .sort((a, b) => b.wrong - a.wrong || a.rate - b.rate)
+    .slice(0, 5);
+
+  const tbody = $("#weak-body");
+  tbody.innerHTML = "";
+  if (rows.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="4" class="center">誤答はありません。お見事です。</td></tr>`;
+  } else {
+    for (const r of rows) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td></td><td class="num">${r.wrong}</td><td class="num">${r.total}</td><td class="num">${r.rate}%</td>`;
+      tr.querySelector("td").textContent = r.cat;
+      tbody.appendChild(tr);
+    }
+  }
+
+  const review = $("#review");
+  review.innerHTML = "<h3>解答レビュー</h3>";
+  state.answers.forEach((a, i) => {
+    const letters = ["A","B","C","D"];
+    const item = document.createElement("div");
+    item.className = "review-item";
+    item.innerHTML = `
+      <div class="q"></div>
+      <div class="meta"></div>
+      <div class="a-line">
+        あなたの解答：<span class="${a.correct ? "ok" : "ng"}">${letters[a.picked]}. ${escapeHtml(a.q.choices[a.picked])}</span>
+        ／ 正解：<span class="ok">${letters[a.q.answer]}. ${escapeHtml(a.q.choices[a.q.answer])}</span>
+      </div>
+      <div class="a-line"><strong>解説：</strong>${escapeHtml(a.q.explanation)}</div>
+    `;
+    item.querySelector(".q").textContent = `Q${i+1}. ${a.q.question}`;
+    item.querySelector(".meta").textContent = `${a.q.category} / ${a.q.topic} / ${a.q.level}${a.q.important ? " / 重要" : ""}`;
+    review.appendChild(item);
+  });
+
+  showResult();
+}
+
+function redoWrong() {
+  const wrong = state.answers.filter(a => !a.correct).map(a => a.q);
+  if (wrong.length === 0) { alert("誤答がありません。お疲れさまでした。"); return; }
+  state.pool = prepareQuestions(shuffle(wrong));
+  state.index = 0;
+  state.answers = [];
+  state.answered = false;
+  state.config = { ...state.config, source: "wrong" };
+  showQuiz();
+  renderQuestion();
+}
+
+function redoSame() {
+  if (!state.config) return;
+  if (state.config.source === "category") { startCategoryMini(state.config.category); return; }
+  const pool = buildPool(state.config);
+  if (pool.length === 0) { alert("条件に合致する問題がありません。"); return; }
+  state.pool = prepareQuestions(pool);
+  state.index = 0;
+  state.answers = [];
+  state.answered = false;
+  showQuiz();
+  renderQuestion();
+}
+
+function redoConfig() { showSetup(); }
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[c]));
+}
+
+/* =========================================================
+   論点マップ画面
+   ========================================================= */
+const TM_YEARS = ["H23","H24","H25","H26","H27","H28","H29","H30","R01","R02","R03","R04","R05","R06","R07"];
+const TM_RECENT = new Set(["R05","R06","R07"]); // 直近3年
+
+function initTopicMapControls() {
+  if (typeof window.TOPIC_FREQ !== "object") return;
+  const sel = $("#tm-filter-field");
+  // 既に追加済みなら何もしない
+  if (sel.options.length > 1) return;
+  for (const field of Object.keys(window.TOPIC_FREQ)) {
+    const opt = document.createElement("option");
+    opt.value = field;
+    opt.textContent = field;
+    sel.appendChild(opt);
+  }
+}
+
+function tmMasteryKey(macro) { return "tmMastery:" + macro; }
+function tmIsMastered(macro) {
+  // ALL_QUESTIONS のうち macroTopic==macro の問題が 1 問以上正答済なら mastered とみなす
+  try {
+    return localStorage.getItem(tmMasteryKey(macro)) === "1";
+  } catch (e) { return false; }
+}
+function tmMarkMastered(macro) {
+  try { localStorage.setItem(tmMasteryKey(macro), "1"); } catch (e) {}
+}
+
+function renderTopicMap() {
+  const body = $("#tm-body");
+  const stats = $("#tm-stats");
+  if (!window.TOPIC_FREQ) {
+    body.innerHTML = '<p class="hint">論点頻度データが読み込まれていません（data/topic_frequency_extended.js）。</p>';
+    return;
+  }
+  const filterField = $("#tm-filter-field").value;
+  const sortKey = $("#tm-sort").value;
+
+  let totalMacros = 0, totalEntries = 0, masteredCount = 0;
+  body.innerHTML = "";
+
+  const fields = filterField === "all"
+    ? Object.keys(window.TOPIC_FREQ)
+    : [filterField];
+
+  for (const field of fields) {
+    const macros = (window.TOPIC_FREQ[field] || []).slice();
+    if (!macros.length) continue;
+    if (sortKey === "name") macros.sort((a,b) => a.macro.localeCompare(b.macro, "ja"));
+    else if (sortKey === "recent") {
+      macros.sort((a,b) => {
+        const ay = Math.max(...a.entries.map(e => e.year_int || 0));
+        const by = Math.max(...b.entries.map(e => e.year_int || 0));
+        return by - ay;
+      });
+    } else { // count desc
+      macros.sort((a,b) => b.count - a.count || a.macro.localeCompare(b.macro, "ja"));
+    }
+
+    const block = document.createElement("div");
+    block.className = "tm-field-block";
+    const fieldTotal = macros.reduce((s, m) => s + m.count, 0);
+    block.innerHTML = `<h3>${escapeHtml(field)} <span style="font-weight:normal;font-size:0.85rem;color:#64748b;">（${macros.length} 論点 / 出題 ${fieldTotal} 回）</span></h3>`;
+
+    const wrap = document.createElement("div");
+    wrap.className = "tm-table-wrap";
+    const table = document.createElement("table");
+    table.className = "tm";
+
+    // header
+    const thead = document.createElement("thead");
+    const trh = document.createElement("tr");
+    trh.innerHTML = `<th class="macro-h">マクロ論点</th>` +
+      TM_YEARS.map(y => `<th class="year-h${TM_RECENT.has(y) ? " recent" : ""}">${y}</th>`).join("") +
+      `<th class="total-col">計</th>`;
+    thead.appendChild(trh);
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+    for (const m of macros) {
+      totalMacros++;
+      totalEntries += m.count;
+      const mastered = tmIsMastered(m.macro);
+      if (mastered) masteredCount++;
+
+      const yearMap = {};
+      for (const e of m.entries) {
+        yearMap[e.year] = (yearMap[e.year] || []);
+        yearMap[e.year].push(e);
+      }
+      const tr = document.createElement("tr");
+      const macroTd = document.createElement("td");
+      macroTd.className = "macro";
+      macroTd.innerHTML = `${escapeHtml(m.macro)}<span class="cnt">×${m.count}</span>`;
+      macroTd.addEventListener("click", () => showMacroDetail(field, m));
+      tr.appendChild(macroTd);
+
+      for (const y of TM_YEARS) {
+        const td = document.createElement("td");
+        td.className = "year-cell";
+        const hits = yearMap[y];
+        if (hits) {
+          td.classList.add("hit");
+          if (TM_RECENT.has(y)) td.classList.add("recent");
+          if (mastered) td.classList.add("mastered");
+          td.textContent = hits.length > 1 ? "●×" + hits.length : "●";
+          td.title = hits.map(h => `${y} 問${h.q}: ${h.topic}`).join("\n");
+        } else {
+          td.textContent = "";
+        }
+        tr.appendChild(td);
+      }
+      const totalTd = document.createElement("td");
+      totalTd.className = "total-col";
+      totalTd.textContent = m.count;
+      tr.appendChild(totalTd);
+      tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+    block.appendChild(wrap);
+    body.appendChild(block);
+  }
+
+  // detail スロット
+  const detail = document.createElement("div");
+  detail.id = "tm-detail-slot";
+  body.appendChild(detail);
+
+  stats.innerHTML =
+    `<span class="stat-pill">対象分野: <strong>${fields.length}</strong></span>` +
+    `<span class="stat-pill">マクロ論点: <strong>${totalMacros}</strong></span>` +
+    `<span class="stat-pill">過去出題: <strong>${totalEntries}</strong> 回 / 15年</span>` +
+    `<span class="stat-pill">攻略済: <strong>${masteredCount}</strong></span>`;
+}
+
+function showMacroDetail(field, macro) {
+  const slot = $("#tm-detail-slot");
+  // ALL_QUESTIONS から該当する問題を抽出 (macroTopic 一致 / R04-R07 由来のみ source あり)
+  const related = ALL_QUESTIONS.filter(q => q.macroTopic === macro.macro);
+
+  const entryList = macro.entries.map(e =>
+    `<li><span class="src">${e.year} 問${e.q}</span>${escapeHtml(e.topic)} <span class="hint">[${e.type || "-"}]</span></li>`
+  ).join("");
+
+  const startBtn = related.length
+    ? `<button class="btn btn-primary" id="tm-start-macro">この論点で ${Math.min(related.length, 5)} 問テスト</button>`
+    : `<span class="hint">この論点の問題はまだ登録されていません（電験王H23-R03の論点は要追加）</span>`;
+
+  slot.innerHTML = `
+    <div class="tm-detail">
+      <h4>📌 ${escapeHtml(macro.macro)} <span style="color:#64748b;font-weight:normal;font-size:0.85rem;">（${escapeHtml(field)} / 出題 ${macro.count} 回）</span></h4>
+      <div>出題年: ${macro.years.map(y => `<span class="src">${y}</span>`).join(" ")}</div>
+      <details open><summary style="cursor:pointer;font-weight:700;margin-top:8px;">過去出題リスト（${macro.entries.length}件）</summary>
+        <ul>${entryList}</ul>
+      </details>
+      <div style="margin-top: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+        ${startBtn}
+        <span class="hint">登録: ${related.length} 問</span>
+      </div>
+    </div>
+  `;
+  slot.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+  if (related.length) {
+    $("#tm-start-macro").addEventListener("click", () => {
+      const pool = shuffle(related.slice()).slice(0, 5);
+      state.config = { level: "all", count: String(pool.length), mode: "random", source: "macro:" + macro.macro };
+      state.pool = prepareQuestions(pool);
+      state.index = 0;
+      state.answers = [];
+      tmMarkMastered(macro.macro);
+      showQuiz();
+      renderQuestion();
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderCategoryButtons();
+  updatePoolInfo();
+  $("#f-level").addEventListener("change", updatePoolInfo);
+  $("#f-count").addEventListener("change", updatePoolInfo);
+  $("#f-mode").addEventListener("change", updatePoolInfo);
+  $("#btn-start").addEventListener("click", startQuiz);
+  $("#btn-next").addEventListener("click", onNext);
+  $("#btn-abort").addEventListener("click", () => {
+    if (confirm("中断して設定画面に戻りますか？")) showSetup();
+  });
+  $("#btn-redo-wrong").addEventListener("click", redoWrong);
+  $("#btn-redo-same").addEventListener("click", redoSame);
+  $("#btn-redo-config").addEventListener("click", redoConfig);
+  $("#btn-topic-map").addEventListener("click", showTopicMap);
+  $("#btn-tm-back").addEventListener("click", showSetup);
+  $("#tm-filter-field").addEventListener("change", renderTopicMap);
+  $("#tm-sort").addEventListener("change", renderTopicMap);
+  initTopicMapControls();
+});
+
+/* =========================================================
+   PWA: Service Worker 登録
+   file:// では Service Worker は動かない（仕様）。
+   ローカルHTTPサーバ or GitHub Pages 等で開いたときだけ登録する。
+   ========================================================= */
+if ("serviceWorker" in navigator && (location.protocol === "http:" || location.protocol === "https:")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch((e) => {
+      console.warn("[PWA] SW登録失敗:", e);
+    });
+  });
+}
+</script>
+</body>
+</html>

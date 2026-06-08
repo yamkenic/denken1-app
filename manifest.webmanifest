@@ -1,0 +1,33 @@
+{
+  "name": "電験1種一次 電力 実践問題集",
+  "short_name": "電験1電力",
+  "description": "電験1種一次試験 電力科目の論点穴埋め4択 + 自己説明モード + 論点マップ。完全オフライン動作。",
+  "start_url": "./denken1_power.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4ed8",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["education", "productivity"]
+}
