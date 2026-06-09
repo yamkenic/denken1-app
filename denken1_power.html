@@ -161,6 +161,42 @@
 
   .question { font-size: 1.05rem; font-weight: 600; color: #0f172a; margin: 6px 0 16px; white-space: pre-wrap; }
 
+  /* 公式PDF本文ブロック：原本のレイアウトを尊重しつつスクロール可能に */
+  .official-text {
+    margin: 6px 0 14px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: 8px;
+    background: #f8fafc;
+  }
+  .official-text.hidden { display: none; }
+  .official-text .official-head {
+    padding: 8px 12px;
+    background: #eff6ff;
+    border-bottom: 1px solid var(--border);
+    border-radius: 6px 6px 0 0;
+    font-weight: 700;
+    color: #1e3a8a;
+    font-size: 0.92rem;
+  }
+  .official-text .official-head small {
+    font-weight: 400;
+    color: #475569;
+    margin-left: 8px;
+  }
+  .official-text .official-body {
+    margin: 0;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #1f2937;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 360px;
+    overflow-y: auto;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS Mincho", serif;
+  }
+
   .choices { display: grid; gap: 8px; }
   .choice {
     display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px;
@@ -304,6 +340,13 @@
             <option value="category">カテゴリ順</option>
           </select>
         </div>
+        <div class="field">
+          <label for="f-fullchoices">選択肢形式</label>
+          <select id="f-fullchoices">
+            <option value="4" selected>4択（練習用）</option>
+            <option value="all">全選択肢（本番形式・公式H23〜R07のみ）</option>
+          </select>
+        </div>
       </div>
       <div class="actions">
         <button class="btn btn-primary" id="btn-start">学習を開始</button>
@@ -333,6 +376,7 @@
       </div>
 
       <div class="badges" id="badges"></div>
+      <div class="official-text hidden" id="official-text"></div>
       <div class="question" id="q-text"></div>
       <div class="choices" id="choices"></div>
       <div class="feedback hidden" id="feedback"></div>
@@ -399,7 +443,10 @@
   </section>
 </main>
 
+<script src="data/official_texts.js"></script>
+<script src="data/choice_pools.js"></script>
 <script src="data/extended_questions.js"></script>
+<script src="data/questions_legacy.js"></script>
 <script src="data/topic_frequency_extended.js"></script>
 <script>
 /* =========================================================
@@ -931,10 +978,11 @@ const QUESTIONS = [
 ];
 
 /* =========================================================
-   問題データ統合（既存 + 電験王R04-R07）
+   問題データ統合（既存AI作成 + 電験王R04-R07 + 公式H23-R03）
    ========================================================= */
 const ALL_QUESTIONS = QUESTIONS.concat(
-  Array.isArray(window.QUESTIONS_EXT) ? window.QUESTIONS_EXT : []
+  Array.isArray(window.QUESTIONS_EXT) ? window.QUESTIONS_EXT : [],
+  Array.isArray(window.QUESTIONS_LEGACY) ? window.QUESTIONS_LEGACY : []
 );
 
 /* =========================================================
@@ -953,6 +1001,25 @@ const setupEl = $("#setup");
 const quizEl = $("#quiz");
 const resultEl = $("#result");
 const topicMapEl = $("#topic-map");
+
+// HTMLエスケープ（PDF本文や選択肢を innerHTML に渡す前に必ず通す）
+function escapeHtml(s) {
+  if (s == null) return "";
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+// 選択肢の番号を返すヘルパー。
+// 4択は A-D、それ以上は 電験本番と同じカタカナ（イロハ...）。
+function choiceLabel(i, total) {
+  const KANA = ["イ","ロ","ハ","ニ","ホ","ヘ","ト","チ","リ","ヌ","ル","ヲ","ワ","カ","ヨ","タ","レ","ソ","ツ","ネ","ナ","ラ","ム","ウ","ヰ"];
+  if (total <= 4) return ["A","B","C","D"][i];
+  return KANA[i] || String(i + 1);
+}
 
 /* =========================================================
    ユーティリティ
@@ -974,7 +1041,44 @@ function withShuffledChoices(q) {
 }
 
 function prepareQuestions(arr) {
+  const cfg = state.config || {};
+  const useFull = cfg.fullChoices === "all";
+  if (useFull && window.CHOICE_POOLS) {
+    return arr.map(q => expandToFullChoices(q)).map(withShuffledChoices);
+  }
   return arr.map(withShuffledChoices);
+}
+
+// 実戦モード：公式解答群を使って全選択肢を生成
+// source.year/q/blank と 電験王解答群を参照して全選択肢を作る
+function expandToFullChoices(q) {
+  if (!q.source || !q.source.year || q.source.q == null) return q;
+  const pool = (window.CHOICE_POOLS || {})[q.source.year];
+  if (!pool || !pool[String(q.source.q)]) return q;
+  const fullPool = pool[String(q.source.q)];
+  // 現在の正解テキスト
+  const correctText = q.choices[q.answer];
+  // 全選択肢（カナ順）
+  const allChoices = Object.values(fullPool);
+  // 重複除去、安全のため正解が含まれることを保証
+  const seen = new Set();
+  const uniq = [];
+  for (const c of allChoices) {
+    if (!seen.has(c)) {
+      seen.add(c);
+      uniq.push(c);
+    }
+  }
+  if (!uniq.includes(correctText)) {
+    uniq.unshift(correctText);
+  }
+  // answerは新しいchoices中の正解位置
+  const newAnswer = uniq.indexOf(correctText);
+  return Object.assign({}, q, {
+    choices: uniq,
+    answer: newAnswer,
+    _fullMode: true,
+  });
 }
 
 function listCategories() {
@@ -1016,7 +1120,7 @@ function buildPool(cfg) {
 function updatePoolInfo() {
   const cfg = readSetupConfig();
   const pool = buildPool(cfg);
-  $("#pool-info").textContent = `条件に合致する出題候補：${pool.length} 問（総問題数 ${ALL_QUESTIONS.length} ／ うち電験王R04-R07: ${(window.QUESTIONS_EXT || []).length} 問）`;
+  $("#pool-info").textContent = `出題候補：${pool.length} 問　（総問題数 ${ALL_QUESTIONS.length}：AI50 + 電験王R04-R07 ${(window.QUESTIONS_EXT || []).length} + 公式H23-R03 ${(window.QUESTIONS_LEGACY || []).length}）`;
 }
 
 function readSetupConfig() {
@@ -1024,6 +1128,7 @@ function readSetupConfig() {
     level: $("#f-level").value,
     count: $("#f-count").value,
     mode: $("#f-mode").value,
+    fullChoices: $("#f-fullchoices") ? $("#f-fullchoices").value : "4",
     source: "setup",
   };
 }
@@ -1135,19 +1240,43 @@ function renderQuestion() {
     const src = `${q.source.year} 問${q.source.q}` + (q.source.blank ? `-(${q.source.blank})` : "");
     badges.appendChild(makeBadge(src, "source"));
   }
+  if (q._fullMode) {
+    badges.appendChild(makeBadge(`全${q.choices.length}選択肢（本番形式）`, "fullmode"));
+  }
 
   $("#q-text").textContent = `Q${cur}. ${q.question}`;
+
+  // 公式PDF本文を表示（source.year + source.q で OFFICIAL_TEXTS を引く）
+  const officialEl = $("#official-text");
+  const bank = (typeof window !== "undefined" && window.OFFICIAL_TEXTS) || null;
+  if (bank && q.source && q.source.year && q.source.q) {
+    const ytxt = bank[q.source.year];
+    const body = ytxt ? ytxt[String(q.source.q)] : null;
+    if (body) {
+      const blank = q.source.blank ? `空欄(${q.source.blank})` : "該当空欄";
+      officialEl.innerHTML =
+        `<div class="official-head">📜 試験原本本文（${q.source.year} 問${q.source.q}）　` +
+        `<small>※ ${blank} を中心に読んでください</small></div>` +
+        `<pre class="official-body">${escapeHtml(body)}</pre>`;
+      officialEl.classList.remove("hidden");
+    } else {
+      officialEl.classList.add("hidden");
+      officialEl.innerHTML = "";
+    }
+  } else {
+    officialEl.classList.add("hidden");
+    officialEl.innerHTML = "";
+  }
 
   // 自己説明ヒント（軽量版）: 回答前に開ける思考の取っ手
   renderSelfExplain(q);
 
   const choicesEl = $("#choices");
   choicesEl.innerHTML = "";
-  const letters = ["A", "B", "C", "D"];
   q.choices.forEach((c, i) => {
     const btn = document.createElement("button");
     btn.className = "choice";
-    btn.innerHTML = `<span class="idx">${letters[i]}</span><span></span>`;
+    btn.innerHTML = `<span class="idx">${choiceLabel(i, q.choices.length)}</span><span></span>`;
     btn.querySelector("span:last-child").textContent = c;
     btn.addEventListener("click", () => onChoose(i));
     choicesEl.appendChild(btn);
@@ -1242,10 +1371,10 @@ function onChoose(picked) {
   const fb = $("#feedback");
   fb.classList.remove("hidden", "ok", "ng");
   fb.classList.add(correct ? "ok" : "ng");
-  const letters = ["A","B","C","D"];
   const deepHtml = renderDeepBlocks(q);
+  const total = q.choices.length;
   fb.innerHTML = `
-    <div><span class="label">${correct ? "正解！" : "不正解"}</span>正解：${letters[q.answer]}. ${escapeHtml(q.choices[q.answer])}</div>
+    <div><span class="label">${correct ? "正解！" : "不正解"}</span>正解：${choiceLabel(q.answer, total)}. ${escapeHtml(q.choices[q.answer])}</div>
     <div class="explain"><strong>解説：</strong>${escapeHtml(q.explanation).replace(/\n/g, "<br>")}</div>
     ${deepHtml}
   `;
@@ -1308,15 +1437,15 @@ function finishQuiz() {
   const review = $("#review");
   review.innerHTML = "<h3>解答レビュー</h3>";
   state.answers.forEach((a, i) => {
-    const letters = ["A","B","C","D"];
     const item = document.createElement("div");
     item.className = "review-item";
+    const total = a.q.choices.length;
     item.innerHTML = `
       <div class="q"></div>
       <div class="meta"></div>
       <div class="a-line">
-        あなたの解答：<span class="${a.correct ? "ok" : "ng"}">${letters[a.picked]}. ${escapeHtml(a.q.choices[a.picked])}</span>
-        ／ 正解：<span class="ok">${letters[a.q.answer]}. ${escapeHtml(a.q.choices[a.q.answer])}</span>
+        あなたの解答：<span class="${a.correct ? "ok" : "ng"}">${choiceLabel(a.picked, total)}. ${escapeHtml(a.q.choices[a.picked])}</span>
+        ／ 正解：<span class="ok">${choiceLabel(a.q.answer, total)}. ${escapeHtml(a.q.choices[a.q.answer])}</span>
       </div>
       <div class="a-line"><strong>解説：</strong>${escapeHtml(a.q.explanation)}</div>
     `;
@@ -1547,6 +1676,9 @@ document.addEventListener("DOMContentLoaded", () => {
   $("#f-level").addEventListener("change", updatePoolInfo);
   $("#f-count").addEventListener("change", updatePoolInfo);
   $("#f-mode").addEventListener("change", updatePoolInfo);
+  if ($("#f-fullchoices")) {
+    $("#f-fullchoices").addEventListener("change", updatePoolInfo);
+  }
   $("#btn-start").addEventListener("click", startQuiz);
   $("#btn-next").addEventListener("click", onNext);
   $("#btn-abort").addEventListener("click", () => {
