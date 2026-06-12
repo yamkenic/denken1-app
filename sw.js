@@ -2,7 +2,7 @@
    Strategy: Cache-First (network-falling). 完全オフラインを最優先する。
    バージョンは中身が変わるたびに必ず上げること（古いキャッシュの強制無効化のため）。
 */
-const CACHE = "denken1-power-v4";
+const CACHE = "denken1-power-v5";
 
 // プリキャッシュ対象。アプリの「コア」だけを入れる。
 // data/ 配下は使われたタイミングで動的にキャッシュへ追加してもよいが、
