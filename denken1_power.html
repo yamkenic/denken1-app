@@ -491,10 +491,11 @@
   <section id="all-list-page" class="hidden">
     <div class="card">
       <h2>📋 全問リスト</h2>
-      <p class="hint">タップした問題を 1 問だけ出題します。グループ切替で単元別／年度別を変更できます。</p>
+      <p class="hint">タップした問題を起点に、同じ分野内を前後移動できます（例：水力 1 → 2 → ...）。</p>
       <div class="list-toolbar">
         <label>表示:
           <select id="al-group">
+            <option value="category">分野別</option>
             <option value="unit" selected>単元別</option>
             <option value="year">年度別</option>
           </select>
@@ -1659,6 +1660,35 @@ function startSingleQuestion(qid) {
   renderQuestion();
 }
 
+function startCategorySequence(category, startQid) {
+  const items = ALL_QUESTIONS
+    .filter(q => q.category === category)
+    .sort((a, b) => Number(a.id) - Number(b.id));
+  if (!items.length) {
+    alert("この分野の問題が見つかりませんでした");
+    return;
+  }
+
+  let startIndex = items.findIndex(q => q.id === startQid);
+  if (startIndex < 0) startIndex = 0;
+
+  state.config = {
+    level: "all",
+    count: String(items.length),
+    mode: "category",
+    source: "listseq",
+    category,
+    fullChoices: "4",
+  };
+  state.pool = prepareQuestions(items);
+  state.index = startIndex;
+  state.answers = [];
+  state.answered = false;
+  Store.session.save();
+  showQuiz();
+  renderQuestion();
+}
+
 // 中断セッションから復元
 function resumeSession() {
   const ses = Store.session.load();
@@ -1710,6 +1740,7 @@ function renderQuestion() {
   $("#prog-text").textContent = `${cur} / ${total}`;
   const modeLabel =
     state.config.source === "category" ? `カテゴリミニテスト：${state.config.category}` :
+    state.config.source === "listseq" ? `全問リスト連続閲覧：${state.config.category}` :
     state.config.source === "wrong" ? "誤答のみ再出題" :
     state.config.source === "srs" ? "📅 今日の復習（SRS）" :
     state.config.source === "single" ? "1問だけ出題" :
@@ -1780,7 +1811,13 @@ function renderQuestion() {
   fb.classList.add("hidden");
   fb.classList.remove("ok", "ng");
   fb.innerHTML = "";
-  $("#btn-next").classList.add("hidden");
+  const nextBtn = $("#btn-next");
+  if (state.config.source === "listseq") {
+    nextBtn.classList.remove("hidden");
+    nextBtn.textContent = state.index + 1 >= state.pool.length ? "この分野の最後" : "次の問題へ";
+  } else {
+    nextBtn.classList.add("hidden");
+  }
 
   // 前へボタン: index > 0 で表示
   const prevBtn = $("#btn-prev");
@@ -1918,6 +1955,16 @@ function onChoose(picked) {
 }
 
 function onNext() {
+  if (state.config && state.config.source === "listseq") {
+    if (state.index + 1 >= state.pool.length) {
+      alert("この分野の最後の問題です。");
+      return;
+    }
+    state.index++;
+    Store.session.save();
+    renderQuestion();
+    return;
+  }
   if (state.index + 1 >= state.pool.length) { finishQuiz(); return; }
   state.index++;
   Store.session.save();
@@ -2279,10 +2326,11 @@ function renderAllList() {
   $("#al-summary").textContent = `表示 ${items.length} / 総 ${ALL_QUESTIONS.length} 問`;
 
   // グループ化
-  const groupKey = (q) => group === "year" ? qYear(q) : qUnit(q);
+  const groupKey = (q) => group === "year" ? qYear(q) : (group === "category" ? q.category : qUnit(q));
   const groupOrderUnit = ["水力","火力","原子力","再エネ","送電","変電","配電","電気施設管理"];
   const groupOrderYear = ["R07","R06","R05","R04","R03","R02","R01","H30","H29","H28","H27","H26","H25","H24","H23","AI出題"];
-  const groupOrder = group === "year" ? groupOrderYear : groupOrderUnit;
+  const groupOrderCategory = listCategories().map(([name]) => name);
+  const groupOrder = group === "year" ? groupOrderYear : (group === "category" ? groupOrderCategory : groupOrderUnit);
 
   const grouped = new Map();
   for (const q of items) {
@@ -2336,9 +2384,9 @@ function renderAllList() {
       li.querySelector(".li-title").textContent = questionTitle(q);
       li.addEventListener("click", () => {
         if (Store.session.exists()) {
-          if (!confirm("この問題だけを出題します（現在の中断セッションは置き換えられます）。続行しますか？")) return;
+          if (!confirm("この問題を起点に同じ分野を連続表示します（現在の中断セッションは置き換えられます）。続行しますか？")) return;
         }
-        startSingleQuestion(q.id);
+        startCategorySequence(q.category, q.id);
       });
       list.appendChild(li);
     }
