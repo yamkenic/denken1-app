@@ -254,6 +254,58 @@
   .center { text-align: center; }
   .hidden { display: none !important; }
 
+  /* 全問リスト / 学習記録 画面 */
+  .list-toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+  .list-toolbar select, .list-toolbar input {
+    padding: 7px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.9rem;
+  }
+  .list-group { margin-top: 14px; }
+  .list-group h3 {
+    margin: 0 0 6px; padding: 6px 10px; background: #eef4ff; color: #1d4ed8;
+    border-left: 4px solid #1d4ed8; border-radius: 4px; font-size: 0.95rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .list-group h3 .grp-stat { font-size: 0.78rem; color: #475569; font-weight: 600; }
+  .list-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; }
+  .list-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px;
+    background: #fff; cursor: pointer; font-size: 0.85rem;
+    transition: background .1s, border-color .1s;
+  }
+  .list-item:hover { background: #f0f9ff; border-color: #93c5fd; }
+  .list-item .li-stat {
+    width: 22px; height: 22px; border-radius: 4px; flex-shrink: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700;
+  }
+  .li-stat.s-untouched { background: #f1f5f9; color: #64748b; }
+  .li-stat.s-correct   { background: #d1fae5; color: #065f46; }
+  .li-stat.s-wrong     { background: #fee2e2; color: #991b1b; }
+  .li-stat.s-mixed     { background: #fef3c7; color: #92400e; }
+  .list-item .li-title { flex: 1; color: #0f172a; }
+  .list-item .li-rec { color: var(--muted); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .stats-card {
+    border: 1px solid var(--border); border-radius: 8px; padding: 12px;
+    background: var(--panel-alt);
+  }
+  .stats-card .lab { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+  .stats-card .val { font-size: 1.4rem; font-weight: 700; color: #0f172a; margin-top: 2px; }
+  .stats-card .sub { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+  table.unit-stats { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 12px; }
+  table.unit-stats th, table.unit-stats td { border-bottom: 1px solid var(--border); padding: 6px 10px; text-align: left; }
+  table.unit-stats th { background: var(--panel-alt); color: #334155; }
+  table.unit-stats td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .bar-mini { display: inline-block; vertical-align: middle; width: 80px; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; }
+  .bar-mini > span { display: block; height: 100%; background: linear-gradient(90deg,#10b981,#34d399); }
+
+  .resume-hint {
+    margin-top: 6px; font-size: 0.78rem; color: #b54708;
+  }
+  .resume-hint.has-session { color: #065f46; font-weight: 600; }
+
   /* 論点マップ画面 */
   .tm-toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 6px 0 14px; }
   .tm-toolbar select { padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; }
@@ -347,12 +399,28 @@
             <option value="all">全選択肢（本番形式・公式H23〜R07のみ）</option>
           </select>
         </div>
+        <div class="field">
+          <label for="f-unit">単元で絞り込み</label>
+          <select id="f-unit">
+            <option value="all">すべての単元</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-year">年度で絞り込み</label>
+          <select id="f-year">
+            <option value="all">すべての年度</option>
+          </select>
+        </div>
       </div>
       <div class="actions">
         <button class="btn btn-primary" id="btn-start">学習を開始</button>
-        <button class="btn btn-outline" id="btn-topic-map">📊 論点マップを見る</button>
-        <span class="hint" id="pool-info"></span>
+        <button class="btn btn-outline" id="btn-resume" disabled>▶ 前回の続きから</button>
+        <button class="btn btn-outline" id="btn-all-list">📋 全問リスト</button>
+        <button class="btn btn-outline" id="btn-stats">📈 学習記録</button>
+        <button class="btn btn-outline" id="btn-topic-map">📊 論点マップ</button>
       </div>
+      <div class="resume-hint" id="resume-hint"></div>
+      <div class="hint" id="pool-info" style="margin-top:6px;"></div>
     </div>
 
     <div class="card">
@@ -383,6 +451,8 @@
 
       <div class="nav-row">
         <button class="btn btn-outline" id="btn-abort">中断して設定に戻る</button>
+        <button class="btn btn-outline" id="btn-quiz-list">📋 全問リスト</button>
+        <button class="btn btn-outline hidden" id="btn-prev">← 前へ</button>
         <button class="btn btn-primary hidden" id="btn-next">次の問題へ</button>
       </div>
     </div>
@@ -410,6 +480,56 @@
       </div>
 
       <div class="review" id="review"></div>
+    </div>
+  </section>
+
+  <section id="all-list-page" class="hidden">
+    <div class="card">
+      <h2>📋 全問リスト</h2>
+      <p class="hint">タップした問題を 1 問だけ出題します。グループ切替で単元別／年度別を変更できます。</p>
+      <div class="list-toolbar">
+        <label>表示:
+          <select id="al-group">
+            <option value="unit" selected>単元別</option>
+            <option value="year">年度別</option>
+          </select>
+        </label>
+        <label>状態:
+          <select id="al-filter">
+            <option value="all" selected>すべて</option>
+            <option value="untouched">未挑戦のみ</option>
+            <option value="wrong">不正解ありのみ</option>
+            <option value="correct">正解ありのみ</option>
+          </select>
+        </label>
+        <input type="search" id="al-search" placeholder="本文・年度で検索" />
+        <span class="hint" id="al-summary"></span>
+      </div>
+      <div id="al-container"></div>
+      <div class="actions" style="margin-top:14px;">
+        <button class="btn btn-outline" id="btn-al-back">← 設定に戻る</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="stats-page" class="hidden">
+    <div class="card">
+      <h2>📈 学習記録</h2>
+      <p class="hint">これまでの累計記録です（端末ローカル保存／リセット不可）。</p>
+      <div class="stats-grid" id="stats-overall"></div>
+      <h3 style="margin-top:18px;">単元別の到達状況</h3>
+      <table class="unit-stats">
+        <thead><tr><th>単元</th><th class="num">挑戦</th><th class="num">正解</th><th class="num">正答率</th><th>進捗</th></tr></thead>
+        <tbody id="stats-unit-body"></tbody>
+      </table>
+      <h3 style="margin-top:18px;">年度別の到達状況</h3>
+      <table class="unit-stats">
+        <thead><tr><th>年度</th><th class="num">挑戦</th><th class="num">正解</th><th class="num">正答率</th><th>進捗</th></tr></thead>
+        <tbody id="stats-year-body"></tbody>
+      </table>
+      <div class="actions" style="margin-top:14px;">
+        <button class="btn btn-outline" id="btn-stats-back">← 設定に戻る</button>
+      </div>
     </div>
   </section>
 
@@ -986,15 +1106,113 @@ const ALL_QUESTIONS = QUESTIONS.concat(
 );
 
 /* =========================================================
+   問題ID付与（id 未設定の問題に一意キーを与える）
+   ========================================================= */
+(function ensureQids() {
+  ALL_QUESTIONS.forEach((q, i) => {
+    if (q.id == null || q.id === "") {
+      if (q.source && q.source.year && q.source.q) {
+        q.id = `OFC:${q.source.year}:${q.source.q}:${q.source.blank || ''}`;
+      } else {
+        q.id = `AI:${i}`;
+      }
+    } else {
+      q.id = String(q.id);
+    }
+  });
+})();
+
+function qYear(q) { return (q.source && q.source.year) ? q.source.year : "AI出題"; }
+// 単元名を 7 単元に正規化（AI50 の category も寄せる）
+const UNIT_NORMALIZE = {
+  "水力発電": "水力",
+  "火力発電": "火力",
+  "原子力発電": "原子力",
+  "再生可能エネルギー": "再エネ",
+  "再エネ・分散電源": "再エネ",
+  "変電・変圧器": "変電",
+  "送電": "送電",
+  "配電": "配電",
+  "電力系統": "送電",
+  "電気材料": "送電",
+  "電気施設管理": "電気施設管理",
+};
+function qUnit(q) {
+  const raw = q.unit || q.category;
+  if (!raw) return "その他";
+  return UNIT_NORMALIZE[raw] || raw;
+}
+
+/* =========================================================
    状態
    ========================================================= */
 const state = {
   pool: [],
   index: 0,
-  answers: [],
+  answers: [],   // sparse: answers[i] = {q, picked, correct} or undefined
   config: null,
   answered: false,
 };
+
+/* =========================================================
+   ローカルストレージ Store
+   - session: 中断中の出題状態（再開用）
+   - record:  累積学習記録 {qid: {c, w, last}}
+   ========================================================= */
+const Store = (() => {
+  const SES_KEY = "denken1_power_session_v1";
+  const REC_KEY = "denken1_power_record_v1";
+  function safeGet(k) {
+    try { const s = localStorage.getItem(k); return s ? JSON.parse(s) : null; }
+    catch (e) { return null; }
+  }
+  function safeSet(k, v) {
+    try { localStorage.setItem(k, JSON.stringify(v)); return true; }
+    catch (e) { return false; }
+  }
+  return {
+    session: {
+      save() {
+        if (!state.pool || state.pool.length === 0) return;
+        const data = {
+          poolIds: state.pool.map(q => q.id),
+          poolFullMode: state.pool.map(q => !!q._fullMode),
+          // 全選択肢モード時はシャッフル後の選択肢順序を保持
+          poolChoices: state.pool.map(q => q._fullMode ? { choices: q.choices, answer: q.answer } : null),
+          index: state.index,
+          answers: state.answers.map(a => a ? { id: a.q.id, picked: a.picked, correct: a.correct } : null),
+          config: state.config,
+          savedAt: Date.now(),
+        };
+        safeSet(SES_KEY, data);
+      },
+      load() { return safeGet(SES_KEY); },
+      clear() { try { localStorage.removeItem(SES_KEY); } catch (e) {} },
+      exists() { const d = safeGet(SES_KEY); return !!(d && d.poolIds && d.poolIds.length); },
+    },
+    record: {
+      _all: null,
+      _load() {
+        if (this._all) return this._all;
+        this._all = safeGet(REC_KEY) || {};
+        return this._all;
+      },
+      bump(qid, correct) {
+        const all = this._load();
+        const r = all[qid] || { c: 0, w: 0, last: 0 };
+        if (correct) r.c++; else r.w++;
+        r.last = Date.now();
+        all[qid] = r;
+        safeSet(REC_KEY, all);
+      },
+      get(qid) {
+        const all = this._load();
+        return all[qid] || { c: 0, w: 0, last: 0 };
+      },
+      all() { return this._load(); },
+    },
+  };
+})();
 
 const $ = (sel) => document.querySelector(sel);
 const setupEl = $("#setup");
@@ -1094,6 +1312,12 @@ function buildPool(cfg) {
   if (cfg.level && cfg.level !== "all") {
     base = base.filter(q => q.level === cfg.level);
   }
+  if (cfg.unit && cfg.unit !== "all") {
+    base = base.filter(q => qUnit(q) === cfg.unit);
+  }
+  if (cfg.year && cfg.year !== "all") {
+    base = base.filter(q => qYear(q) === cfg.year);
+  }
   let ordered;
   if (cfg.mode === "category") {
     const byCat = new Map();
@@ -1120,7 +1344,12 @@ function buildPool(cfg) {
 function updatePoolInfo() {
   const cfg = readSetupConfig();
   const pool = buildPool(cfg);
-  $("#pool-info").textContent = `出題候補：${pool.length} 問　（総問題数 ${ALL_QUESTIONS.length}：AI50 + 電験王R04-R07 ${(window.QUESTIONS_EXT || []).length} + 公式H23-R03 ${(window.QUESTIONS_LEGACY || []).length}）`;
+  const filterParts = [];
+  if (cfg.unit !== "all") filterParts.push(`単元=${cfg.unit}`);
+  if (cfg.year !== "all") filterParts.push(`年度=${cfg.year}`);
+  if (cfg.level !== "all") filterParts.push(`難易度=${cfg.level}`);
+  const filterTxt = filterParts.length ? `　[${filterParts.join(" / ")}]` : "";
+  $("#pool-info").textContent = `出題候補：${pool.length} 問　（総問題数 ${ALL_QUESTIONS.length}：AI50 + 電験王R04-R07 ${(window.QUESTIONS_EXT || []).length} + 公式H23-R03 ${(window.QUESTIONS_LEGACY || []).length}）${filterTxt}`;
 }
 
 function readSetupConfig() {
@@ -1129,38 +1358,100 @@ function readSetupConfig() {
     count: $("#f-count").value,
     mode: $("#f-mode").value,
     fullChoices: $("#f-fullchoices") ? $("#f-fullchoices").value : "4",
+    unit: $("#f-unit") ? $("#f-unit").value : "all",
+    year: $("#f-year") ? $("#f-year").value : "all",
     source: "setup",
   };
+}
+
+function populateFilterOptions() {
+  const unitSel = $("#f-unit");
+  const yearSel = $("#f-year");
+  if (!unitSel || !yearSel) return;
+  // 単元
+  const unitCount = new Map();
+  const yearCount = new Map();
+  for (const q of ALL_QUESTIONS) {
+    const u = qUnit(q); unitCount.set(u, (unitCount.get(u) || 0) + 1);
+    const y = qYear(q); yearCount.set(y, (yearCount.get(y) || 0) + 1);
+  }
+  const unitOrder = ["水力","火力","原子力","再エネ","送電","変電","配電","電気施設管理"];
+  const orderedUnits = unitOrder.filter(u => unitCount.has(u))
+    .concat([...unitCount.keys()].filter(u => !unitOrder.includes(u)));
+  for (const u of orderedUnits) {
+    const opt = document.createElement("option");
+    opt.value = u; opt.textContent = `${u}（${unitCount.get(u)}）`;
+    unitSel.appendChild(opt);
+  }
+  const yearOrder = ["AI出題","H23","H24","H25","H26","H27","H28","H29","H30","R01","R02","R03","R04","R05","R06","R07"];
+  const orderedYears = yearOrder.filter(y => yearCount.has(y))
+    .concat([...yearCount.keys()].filter(y => !yearOrder.includes(y)));
+  for (const y of orderedYears) {
+    const opt = document.createElement("option");
+    opt.value = y; opt.textContent = `${y}（${yearCount.get(y)}）`;
+    yearSel.appendChild(opt);
+  }
 }
 
 /* =========================================================
    画面表示
    ========================================================= */
-function showSetup() {
-  setupEl.classList.remove("hidden");
+function hideAllSections() {
+  setupEl.classList.add("hidden");
   quizEl.classList.add("hidden");
   resultEl.classList.add("hidden");
   topicMapEl.classList.add("hidden");
+  $("#all-list-page").classList.add("hidden");
+  $("#stats-page").classList.add("hidden");
+}
+function showSetup() {
+  hideAllSections();
+  setupEl.classList.remove("hidden");
   updatePoolInfo();
+  refreshResumeHint();
 }
 function showQuiz() {
-  setupEl.classList.add("hidden");
+  hideAllSections();
   quizEl.classList.remove("hidden");
-  resultEl.classList.add("hidden");
-  topicMapEl.classList.add("hidden");
 }
 function showResult() {
-  setupEl.classList.add("hidden");
-  quizEl.classList.add("hidden");
+  hideAllSections();
   resultEl.classList.remove("hidden");
-  topicMapEl.classList.add("hidden");
 }
 function showTopicMap() {
-  setupEl.classList.add("hidden");
-  quizEl.classList.add("hidden");
-  resultEl.classList.add("hidden");
+  hideAllSections();
   topicMapEl.classList.remove("hidden");
   renderTopicMap();
+}
+function showAllList() {
+  hideAllSections();
+  $("#all-list-page").classList.remove("hidden");
+  renderAllList();
+}
+function showStats() {
+  hideAllSections();
+  $("#stats-page").classList.remove("hidden");
+  renderStatsPage();
+}
+
+function refreshResumeHint() {
+  const ses = Store.session.load();
+  const btn = $("#btn-resume");
+  const hint = $("#resume-hint");
+  if (!btn || !hint) return;
+  if (ses && ses.poolIds && ses.poolIds.length) {
+    btn.disabled = false;
+    const at = new Date(ses.savedAt || Date.now());
+    const hh = String(at.getHours()).padStart(2, "0");
+    const mm = String(at.getMinutes()).padStart(2, "0");
+    const done = (ses.answers || []).filter(a => a && a !== null).length;
+    hint.className = "resume-hint has-session";
+    hint.textContent = `💾 中断中のセッションあり：${done} / ${ses.poolIds.length} 問解答済（最終 ${at.getMonth()+1}/${at.getDate()} ${hh}:${mm}）`;
+  } else {
+    btn.disabled = true;
+    hint.className = "resume-hint";
+    hint.textContent = "";
+  }
 }
 
 /* =========================================================
@@ -1185,6 +1476,7 @@ function startCategoryMini(category) {
   state.index = 0;
   state.answers = [];
   state.answered = false;
+  Store.session.save();
   showQuiz();
   renderQuestion();
 }
@@ -1204,6 +1496,61 @@ function startQuiz() {
   state.index = 0;
   state.answers = [];
   state.answered = false;
+  Store.session.save();
+  showQuiz();
+  renderQuestion();
+}
+
+// 1問だけ出題（全問リストからのジャンプ用）
+function startSingleQuestion(qid) {
+  const q = ALL_QUESTIONS.find(x => x.id === qid);
+  if (!q) { alert("問題が見つかりませんでした"); return; }
+  state.config = { level: "all", count: "1", mode: "random", source: "single", fullChoices: "4" };
+  state.pool = prepareQuestions([q]);
+  state.index = 0;
+  state.answers = [];
+  state.answered = false;
+  Store.session.save();
+  showQuiz();
+  renderQuestion();
+}
+
+// 中断セッションから復元
+function resumeSession() {
+  const ses = Store.session.load();
+  if (!ses || !ses.poolIds || !ses.poolIds.length) {
+    alert("再開できるセッションがありません");
+    refreshResumeHint();
+    return;
+  }
+  const pool = [];
+  for (let i = 0; i < ses.poolIds.length; i++) {
+    const id = ses.poolIds[i];
+    const orig = ALL_QUESTIONS.find(x => x.id === id);
+    if (!orig) {
+      alert("セッション内の問題が見つかりませんでした。新しく開始します。");
+      Store.session.clear();
+      refreshResumeHint();
+      return;
+    }
+    let q;
+    if (ses.poolFullMode && ses.poolFullMode[i] && ses.poolChoices && ses.poolChoices[i]) {
+      // 全選択肢モードの並び順を完全再現
+      q = { ...orig, choices: ses.poolChoices[i].choices, answer: ses.poolChoices[i].answer, _fullMode: true };
+    } else {
+      // 4択モードは再シャッフルして再構築（簡略・順序は変わる可能性あり）
+      q = prepareQuestions([orig])[0];
+    }
+    pool.push(q);
+  }
+  state.pool = pool;
+  state.config = ses.config || { level: "all", count: String(pool.length), mode: "random", source: "resume" };
+  state.index = Math.min(ses.index || 0, pool.length - 1);
+  state.answered = false;
+  state.answers = (ses.answers || []).map((a, i) => {
+    if (!a) return undefined;
+    return { q: pool[i], picked: a.picked, correct: a.correct };
+  });
   showQuiz();
   renderQuestion();
 }
@@ -1287,6 +1634,39 @@ function renderQuestion() {
   fb.classList.remove("ok", "ng");
   fb.innerHTML = "";
   $("#btn-next").classList.add("hidden");
+
+  // 前へボタン: index > 0 で表示
+  const prevBtn = $("#btn-prev");
+  if (prevBtn) {
+    if (state.index > 0) prevBtn.classList.remove("hidden");
+    else prevBtn.classList.add("hidden");
+  }
+
+  // 既回答がある場合は解答済み状態として再表示
+  const prevAns = state.answers[state.index];
+  if (prevAns) {
+    state.answered = true;
+    const buttons = choicesEl.querySelectorAll(".choice");
+    buttons.forEach((b, i) => {
+      b.disabled = true;
+      if (i === q.answer) b.classList.add("correct");
+      if (i === prevAns.picked && !prevAns.correct) b.classList.add("wrong");
+    });
+    fb.classList.remove("hidden", "ok", "ng");
+    fb.classList.add(prevAns.correct ? "ok" : "ng");
+    const deepHtml = renderDeepBlocks(q);
+    const total = q.choices.length;
+    const rec = Store.record.get(q.id);
+    const recTxt = (rec.c + rec.w > 0) ? `<div class="hint" style="margin-top:6px;">累計 ⭕${rec.c} / ❌${rec.w}</div>` : "";
+    fb.innerHTML = `
+      <div><span class="label">${prevAns.correct ? "正解！" : "不正解"}</span>正解：${choiceLabel(q.answer, total)}. ${escapeHtml(q.choices[q.answer])}</div>
+      <div class="explain"><strong>解説：</strong>${escapeHtml(q.explanation).replace(/\n/g, "<br>")}</div>
+      ${deepHtml}
+      ${recTxt}
+    `;
+    $("#btn-next").classList.remove("hidden");
+    $("#btn-next").textContent = state.index + 1 >= state.pool.length ? "結果を見る" : "次の問題へ";
+  }
 }
 
 function makeBadge(text, cls) {
@@ -1359,7 +1739,9 @@ function onChoose(picked) {
   state.answered = true;
   const q = state.pool[state.index];
   const correct = picked === q.answer;
-  state.answers.push({ q, picked, correct });
+  state.answers[state.index] = { q, picked, correct };
+  Store.record.bump(q.id, correct);
+  Store.session.save();
 
   const buttons = $("#choices").querySelectorAll(".choice");
   buttons.forEach((b, i) => {
@@ -1373,10 +1755,13 @@ function onChoose(picked) {
   fb.classList.add(correct ? "ok" : "ng");
   const deepHtml = renderDeepBlocks(q);
   const total = q.choices.length;
+  const rec = Store.record.get(q.id);
+  const recTxt = (rec.c + rec.w > 0) ? `<div class="hint" style="margin-top:6px;">累計 ⭕${rec.c} / ❌${rec.w}</div>` : "";
   fb.innerHTML = `
     <div><span class="label">${correct ? "正解！" : "不正解"}</span>正解：${choiceLabel(q.answer, total)}. ${escapeHtml(q.choices[q.answer])}</div>
     <div class="explain"><strong>解説：</strong>${escapeHtml(q.explanation).replace(/\n/g, "<br>")}</div>
     ${deepHtml}
+    ${recTxt}
   `;
   $("#btn-next").classList.remove("hidden");
   $("#btn-next").textContent = state.index + 1 >= state.pool.length ? "結果を見る" : "次の問題へ";
@@ -1386,21 +1771,31 @@ function onChoose(picked) {
 function onNext() {
   if (state.index + 1 >= state.pool.length) { finishQuiz(); return; }
   state.index++;
+  Store.session.save();
+  renderQuestion();
+}
+
+function onPrev() {
+  if (state.index <= 0) return;
+  state.index--;
+  Store.session.save();
   renderQuestion();
 }
 
 function updateScorePill() {
   const total = state.pool.length;
-  const correct = state.answers.filter(a => a.correct).length;
-  $("#score-pill").textContent = `スコア ${correct} / ${total}`;
+  const answered = state.answers.filter(a => a).length;
+  const correct = state.answers.filter(a => a && a.correct).length;
+  $("#score-pill").textContent = `スコア ${correct} / ${answered}（残${total - answered}）`;
 }
 
 /* =========================================================
    結果
    ========================================================= */
 function finishQuiz() {
-  const total = state.answers.length;
-  const correct = state.answers.filter(a => a.correct).length;
+  const answersAll = state.answers.filter(Boolean);
+  const total = answersAll.length;
+  const correct = answersAll.filter(a => a.correct).length;
   const rate = total === 0 ? 0 : Math.round((correct / total) * 1000) / 10;
 
   $("#r-correct").textContent = correct;
@@ -1408,7 +1803,7 @@ function finishQuiz() {
   $("#r-rate").textContent = rate + "%";
 
   const byCat = new Map();
-  for (const a of state.answers) {
+  for (const a of answersAll) {
     const cat = a.q.category;
     if (!byCat.has(cat)) byCat.set(cat, { total: 0, wrong: 0 });
     const o = byCat.get(cat);
@@ -1436,7 +1831,7 @@ function finishQuiz() {
 
   const review = $("#review");
   review.innerHTML = "<h3>解答レビュー</h3>";
-  state.answers.forEach((a, i) => {
+  answersAll.forEach((a, i) => {
     const item = document.createElement("div");
     item.className = "review-item";
     const total = a.q.choices.length;
@@ -1454,17 +1849,19 @@ function finishQuiz() {
     review.appendChild(item);
   });
 
+  Store.session.clear();
   showResult();
 }
 
 function redoWrong() {
-  const wrong = state.answers.filter(a => !a.correct).map(a => a.q);
+  const wrong = state.answers.filter(a => a && !a.correct).map(a => a.q);
   if (wrong.length === 0) { alert("誤答がありません。お疲れさまでした。"); return; }
   state.pool = prepareQuestions(shuffle(wrong));
   state.index = 0;
   state.answers = [];
   state.answered = false;
   state.config = { ...state.config, source: "wrong" };
+  Store.session.save();
   showQuiz();
   renderQuestion();
 }
@@ -1478,6 +1875,7 @@ function redoSame() {
   state.index = 0;
   state.answers = [];
   state.answered = false;
+  Store.session.save();
   showQuiz();
   renderQuestion();
 }
@@ -1664,31 +2062,215 @@ function showMacroDetail(field, macro) {
       state.index = 0;
       state.answers = [];
       tmMarkMastered(macro.macro);
+      Store.session.save();
       showQuiz();
       renderQuestion();
     });
   }
 }
 
+/* =========================================================
+   全問リスト
+   ========================================================= */
+function questionStatusClass(qid) {
+  const r = Store.record.get(qid);
+  if (r.c === 0 && r.w === 0) return { cls: "s-untouched", txt: "未" };
+  if (r.w === 0) return { cls: "s-correct", txt: "⭕" };
+  if (r.c === 0) return { cls: "s-wrong",   txt: "✖" };
+  return { cls: "s-mixed", txt: "△" };
+}
+function questionTitle(q) {
+  if (q.source && q.source.year) {
+    return `${q.source.year} 問${q.source.q}` + (q.source.blank ? `-(${q.source.blank})` : "");
+  }
+  return q.topic || q.category || q.question.slice(0, 40);
+}
+
+function renderAllList() {
+  const group = $("#al-group").value;
+  const filt = $("#al-filter").value;
+  const kw = ($("#al-search").value || "").trim();
+  const container = $("#al-container");
+  container.innerHTML = "";
+
+  // フィルタ
+  let items = ALL_QUESTIONS.filter(q => {
+    if (kw) {
+      const hay = `${q.question} ${q.topic || ""} ${q.category || ""} ${qYear(q)} ${qUnit(q)}`;
+      if (hay.indexOf(kw) === -1) return false;
+    }
+    const st = questionStatusClass(q.id).cls;
+    if (filt === "untouched" && st !== "s-untouched") return false;
+    if (filt === "correct"   && st !== "s-correct"   && st !== "s-mixed") return false;
+    if (filt === "wrong"     && st !== "s-wrong"     && st !== "s-mixed") return false;
+    return true;
+  });
+
+  $("#al-summary").textContent = `表示 ${items.length} / 総 ${ALL_QUESTIONS.length} 問`;
+
+  // グループ化
+  const groupKey = (q) => group === "year" ? qYear(q) : qUnit(q);
+  const groupOrderUnit = ["水力","火力","原子力","再エネ","送電","変電","配電","電気施設管理"];
+  const groupOrderYear = ["R07","R06","R05","R04","R03","R02","R01","H30","H29","H28","H27","H26","H25","H24","H23","AI出題"];
+  const groupOrder = group === "year" ? groupOrderYear : groupOrderUnit;
+
+  const grouped = new Map();
+  for (const q of items) {
+    const k = groupKey(q);
+    if (!grouped.has(k)) grouped.set(k, []);
+    grouped.get(k).push(q);
+  }
+  const orderedKeys = groupOrder.filter(k => grouped.has(k))
+    .concat([...grouped.keys()].filter(k => !groupOrder.includes(k)));
+
+  for (const key of orderedKeys) {
+    const arr = grouped.get(key);
+    // 年度内/単元内ソート: 年度別なら問番号順、単元別なら年→問番号順
+    arr.sort((a, b) => {
+      if (group === "year") {
+        const aq = (a.source && a.source.q) ? a.source.q : 999;
+        const bq = (b.source && b.source.q) ? b.source.q : 999;
+        if (aq !== bq) return aq - bq;
+        return String(a.source?.blank || "").localeCompare(String(b.source?.blank || ""));
+      } else {
+        const ay = qYear(a), by = qYear(b);
+        if (ay !== by) return by.localeCompare(ay);
+        const aq = (a.source && a.source.q) ? a.source.q : 999;
+        const bq = (b.source && b.source.q) ? b.source.q : 999;
+        return aq - bq;
+      }
+    });
+    const total = arr.length;
+    const done = arr.filter(q => {
+      const c = questionStatusClass(q.id).cls;
+      return c !== "s-untouched";
+    }).length;
+    const grp = document.createElement("div");
+    grp.className = "list-group";
+    const h = document.createElement("h3");
+    h.innerHTML = `<span></span><span class="grp-stat">${done} / ${total} 問挑戦済</span>`;
+    h.querySelector("span").textContent = key;
+    grp.appendChild(h);
+    const list = document.createElement("div");
+    list.className = "list-items";
+    for (const q of arr) {
+      const st = questionStatusClass(q.id);
+      const rec = Store.record.get(q.id);
+      const li = document.createElement("button");
+      li.className = "list-item";
+      li.title = q.question;
+      li.innerHTML =
+        `<span class="li-stat ${st.cls}">${st.txt}</span>` +
+        `<span class="li-title"></span>` +
+        `<span class="li-rec">⭕${rec.c}/❌${rec.w}</span>`;
+      li.querySelector(".li-title").textContent = questionTitle(q);
+      li.addEventListener("click", () => {
+        if (Store.session.exists()) {
+          if (!confirm("この問題だけを出題します（現在の中断セッションは置き換えられます）。続行しますか？")) return;
+        }
+        startSingleQuestion(q.id);
+      });
+      list.appendChild(li);
+    }
+    grp.appendChild(list);
+    container.appendChild(grp);
+  }
+}
+
+/* =========================================================
+   学習記録ページ
+   ========================================================= */
+function renderStatsPage() {
+  const all = Store.record.all();
+  const ids = Object.keys(all);
+  let totalAttempts = 0, totalCorrect = 0, totalWrong = 0;
+  for (const id of ids) {
+    totalAttempts += all[id].c + all[id].w;
+    totalCorrect += all[id].c;
+    totalWrong += all[id].w;
+  }
+  const uniqQ = ids.length;
+  const uniqCorrect = ids.filter(id => all[id].c > 0).length;
+  const rate = totalAttempts === 0 ? 0 : Math.round(totalCorrect / totalAttempts * 1000) / 10;
+  const coverage = ALL_QUESTIONS.length === 0 ? 0 : Math.round(uniqQ / ALL_QUESTIONS.length * 1000) / 10;
+  const masterRate = ALL_QUESTIONS.length === 0 ? 0 : Math.round(uniqCorrect / ALL_QUESTIONS.length * 1000) / 10;
+
+  $("#stats-overall").innerHTML =
+    `<div class="stats-card"><div class="lab">累計解答数</div><div class="val">${totalAttempts}</div><div class="sub">⭕${totalCorrect} / ❌${totalWrong}</div></div>` +
+    `<div class="stats-card"><div class="lab">累計正答率</div><div class="val">${rate}%</div></div>` +
+    `<div class="stats-card"><div class="lab">問題網羅率</div><div class="val">${coverage}%</div><div class="sub">${uniqQ} / ${ALL_QUESTIONS.length} 問</div></div>` +
+    `<div class="stats-card"><div class="lab">1回以上正解</div><div class="val">${masterRate}%</div><div class="sub">${uniqCorrect} / ${ALL_QUESTIONS.length} 問</div></div>`;
+
+  // 単元別
+  const unitAgg = new Map();
+  const yearAgg = new Map();
+  for (const q of ALL_QUESTIONS) {
+    const r = all[q.id] || { c: 0, w: 0 };
+    const ua = unitAgg.get(qUnit(q)) || { total: 0, attempted: 0, c: 0, w: 0 };
+    ua.total++; if (r.c + r.w > 0) ua.attempted++; ua.c += r.c; ua.w += r.w;
+    unitAgg.set(qUnit(q), ua);
+    const ya = yearAgg.get(qYear(q)) || { total: 0, attempted: 0, c: 0, w: 0 };
+    ya.total++; if (r.c + r.w > 0) ya.attempted++; ya.c += r.c; ya.w += r.w;
+    yearAgg.set(qYear(q), ya);
+  }
+  const unitOrder = ["水力","火力","原子力","再エネ","送電","変電","配電","電気施設管理"];
+  const yearOrder = ["R07","R06","R05","R04","R03","R02","R01","H30","H29","H28","H27","H26","H25","H24","H23","AI出題"];
+
+  function renderAgg(tbodySel, agg, order) {
+    const tbody = $(tbodySel);
+    tbody.innerHTML = "";
+    const keys = order.filter(k => agg.has(k))
+      .concat([...agg.keys()].filter(k => !order.includes(k)));
+    for (const k of keys) {
+      const a = agg.get(k);
+      const total = a.c + a.w;
+      const rate = total === 0 ? 0 : Math.round(a.c / total * 1000) / 10;
+      const cov = a.total === 0 ? 0 : Math.round(a.attempted / a.total * 100);
+      const tr = document.createElement("tr");
+      tr.innerHTML =
+        `<td></td><td class="num">${total}</td><td class="num">${a.c}</td><td class="num">${rate}%</td>` +
+        `<td><span class="bar-mini"><span style="width:${cov}%"></span></span> ${a.attempted}/${a.total}</td>`;
+      tr.querySelector("td").textContent = k;
+      tbody.appendChild(tr);
+    }
+  }
+  renderAgg("#stats-unit-body", unitAgg, unitOrder);
+  renderAgg("#stats-year-body", yearAgg, yearOrder);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderCategoryButtons();
+  populateFilterOptions();
   updatePoolInfo();
+  refreshResumeHint();
   $("#f-level").addEventListener("change", updatePoolInfo);
   $("#f-count").addEventListener("change", updatePoolInfo);
   $("#f-mode").addEventListener("change", updatePoolInfo);
   if ($("#f-fullchoices")) {
     $("#f-fullchoices").addEventListener("change", updatePoolInfo);
   }
+  if ($("#f-unit")) $("#f-unit").addEventListener("change", updatePoolInfo);
+  if ($("#f-year")) $("#f-year").addEventListener("change", updatePoolInfo);
   $("#btn-start").addEventListener("click", startQuiz);
+  $("#btn-resume").addEventListener("click", resumeSession);
+  $("#btn-all-list").addEventListener("click", showAllList);
+  $("#btn-stats").addEventListener("click", showStats);
   $("#btn-next").addEventListener("click", onNext);
+  $("#btn-prev").addEventListener("click", onPrev);
+  $("#btn-quiz-list").addEventListener("click", showAllList);
   $("#btn-abort").addEventListener("click", () => {
-    if (confirm("中断して設定画面に戻りますか？")) showSetup();
+    if (confirm("中断して設定画面に戻りますか？\n（解答状況は残るので「前回の続きから」で再開できます）")) showSetup();
   });
   $("#btn-redo-wrong").addEventListener("click", redoWrong);
   $("#btn-redo-same").addEventListener("click", redoSame);
   $("#btn-redo-config").addEventListener("click", redoConfig);
   $("#btn-topic-map").addEventListener("click", showTopicMap);
   $("#btn-tm-back").addEventListener("click", showSetup);
+  $("#btn-al-back").addEventListener("click", showSetup);
+  $("#btn-stats-back").addEventListener("click", showSetup);
+  if ($("#al-group"))  $("#al-group").addEventListener("change", renderAllList);
+  if ($("#al-filter")) $("#al-filter").addEventListener("change", renderAllList);
+  if ($("#al-search")) $("#al-search").addEventListener("input", renderAllList);
   $("#tm-filter-field").addEventListener("change", renderTopicMap);
   $("#tm-sort").addEventListener("change", renderTopicMap);
   initTopicMapControls();
