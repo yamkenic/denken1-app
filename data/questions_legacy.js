@@ -21,7 +21,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10001,
@@ -45,7 +46,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10002,
@@ -69,7 +71,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10003,
@@ -93,7 +96,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10004,
@@ -117,7 +121,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10005,
@@ -141,7 +146,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10006,
@@ -165,7 +171,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10007,
@@ -189,7 +196,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10008,
@@ -213,7 +221,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10009,
@@ -237,7 +246,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10010,
@@ -261,7 +271,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10011,
@@ -285,7 +296,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10012,
@@ -309,7 +321,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10013,
@@ -333,7 +346,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10014,
@@ -357,7 +371,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10015,
@@ -381,7 +396,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10016,
@@ -405,7 +421,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10017,
@@ -429,7 +446,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10018,
@@ -453,7 +471,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10019,
@@ -477,7 +496,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10020,
@@ -501,7 +521,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10021,
@@ -525,7 +546,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10022,
@@ -549,7 +571,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10023,
@@ -573,7 +596,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10024,
@@ -597,7 +621,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10025,
@@ -621,7 +646,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10026,
@@ -645,7 +671,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10027,
@@ -669,7 +696,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10028,
@@ -693,7 +721,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10029,
@@ -717,7 +746,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10030,
@@ -741,7 +771,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10031,
@@ -765,7 +796,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10032,
@@ -789,7 +821,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10033,
@@ -813,7 +846,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10034,
@@ -837,7 +871,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H23 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10035,
@@ -861,7 +896,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10036,
@@ -885,7 +921,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10037,
@@ -909,7 +946,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10038,
@@ -933,7 +971,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10039,
@@ -957,7 +996,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10040,
@@ -981,7 +1021,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10041,
@@ -1005,7 +1046,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10042,
@@ -1029,7 +1071,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10043,
@@ -1053,7 +1096,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10044,
@@ -1077,7 +1121,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10045,
@@ -1101,7 +1146,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10046,
@@ -1125,7 +1171,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10047,
@@ -1149,7 +1196,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10048,
@@ -1173,7 +1221,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10049,
@@ -1197,7 +1246,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10050,
@@ -1221,7 +1271,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10051,
@@ -1245,7 +1296,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10052,
@@ -1269,7 +1321,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10053,
@@ -1293,7 +1346,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10054,
@@ -1317,7 +1371,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10055,
@@ -1341,7 +1396,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10056,
@@ -1365,7 +1421,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10057,
@@ -1389,7 +1446,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10058,
@@ -1413,7 +1471,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10059,
@@ -1437,7 +1496,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10060,
@@ -1461,7 +1521,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10061,
@@ -1485,7 +1546,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10062,
@@ -1509,7 +1571,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10063,
@@ -1533,7 +1596,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10064,
@@ -1557,7 +1621,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10065,
@@ -1581,7 +1646,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10066,
@@ -1605,7 +1671,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10067,
@@ -1629,7 +1696,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10068,
@@ -1653,7 +1721,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10069,
@@ -1677,7 +1746,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10070,
@@ -1701,7 +1771,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H24 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10071,
@@ -1725,7 +1796,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10072,
@@ -1749,7 +1821,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10073,
@@ -1773,7 +1846,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10074,
@@ -1797,7 +1871,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10075,
@@ -1821,7 +1896,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10076,
@@ -1845,7 +1921,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10077,
@@ -1869,7 +1946,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10078,
@@ -1893,7 +1971,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10079,
@@ -1917,7 +1996,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10080,
@@ -1941,7 +2021,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10081,
@@ -1965,7 +2046,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10082,
@@ -1989,7 +2071,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10083,
@@ -2013,7 +2096,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10084,
@@ -2037,7 +2121,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10085,
@@ -2061,7 +2146,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10086,
@@ -2085,7 +2171,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10087,
@@ -2109,7 +2196,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10088,
@@ -2133,7 +2221,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10089,
@@ -2157,7 +2246,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10090,
@@ -2181,7 +2271,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10091,
@@ -2205,7 +2296,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10092,
@@ -2229,7 +2321,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10093,
@@ -2253,7 +2346,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10094,
@@ -2277,7 +2371,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10095,
@@ -2301,7 +2396,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10096,
@@ -2325,7 +2421,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10097,
@@ -2349,7 +2446,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10098,
@@ -2373,7 +2471,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10099,
@@ -2397,7 +2496,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10100,
@@ -2421,7 +2521,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10101,
@@ -2445,7 +2546,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10102,
@@ -2469,7 +2571,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10103,
@@ -2493,7 +2596,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10104,
@@ -2517,7 +2621,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H25 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10105,
@@ -2541,7 +2646,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10106,
@@ -2565,7 +2671,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10107,
@@ -2589,7 +2696,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10108,
@@ -2613,7 +2721,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10109,
@@ -2637,7 +2746,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10110,
@@ -2661,7 +2771,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10111,
@@ -2685,7 +2796,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10112,
@@ -2709,7 +2821,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10113,
@@ -2733,7 +2846,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10114,
@@ -2757,7 +2871,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10115,
@@ -2781,7 +2896,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10116,
@@ -2805,7 +2921,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10117,
@@ -2829,7 +2946,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10118,
@@ -2853,7 +2971,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10119,
@@ -2877,7 +2996,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10120,
@@ -2901,7 +3021,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10121,
@@ -2925,7 +3046,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10122,
@@ -2949,7 +3071,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10123,
@@ -2973,7 +3096,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10124,
@@ -2997,7 +3121,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10125,
@@ -3021,7 +3146,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10126,
@@ -3045,7 +3171,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10127,
@@ -3069,7 +3196,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10128,
@@ -3093,7 +3221,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10129,
@@ -3117,7 +3246,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10130,
@@ -3141,7 +3271,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10131,
@@ -3165,7 +3296,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10132,
@@ -3189,7 +3321,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10133,
@@ -3213,7 +3346,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10134,
@@ -3237,7 +3371,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10135,
@@ -3261,7 +3396,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10136,
@@ -3285,7 +3421,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10137,
@@ -3309,7 +3446,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10138,
@@ -3333,7 +3471,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10139,
@@ -3357,7 +3496,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10140,
@@ -3381,7 +3521,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H26 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10141,
@@ -3405,7 +3546,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10142,
@@ -3429,7 +3571,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10143,
@@ -3453,7 +3596,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10144,
@@ -3477,7 +3621,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10145,
@@ -3501,7 +3646,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10146,
@@ -3525,7 +3671,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10147,
@@ -3549,7 +3696,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10148,
@@ -3573,7 +3721,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10149,
@@ -3597,7 +3746,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10150,
@@ -3621,7 +3771,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10151,
@@ -3645,7 +3796,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10152,
@@ -3669,7 +3821,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10153,
@@ -3693,7 +3846,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10154,
@@ -3717,7 +3871,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10155,
@@ -3741,7 +3896,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10156,
@@ -3765,7 +3921,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10157,
@@ -3789,7 +3946,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10158,
@@ -3813,7 +3971,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10159,
@@ -3837,7 +3996,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10160,
@@ -3861,7 +4021,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10161,
@@ -3885,7 +4046,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10162,
@@ -3909,7 +4071,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10163,
@@ -3933,7 +4096,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10164,
@@ -3957,7 +4121,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10165,
@@ -3981,7 +4146,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10166,
@@ -4005,7 +4171,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10167,
@@ -4029,7 +4196,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10168,
@@ -4053,7 +4221,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10169,
@@ -4077,7 +4246,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10170,
@@ -4101,7 +4271,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10171,
@@ -4125,7 +4296,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10172,
@@ -4149,7 +4321,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10173,
@@ -4173,7 +4346,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10174,
@@ -4197,7 +4371,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H27 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10175,
@@ -4221,7 +4396,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10176,
@@ -4245,7 +4421,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10177,
@@ -4269,7 +4446,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10178,
@@ -4293,7 +4471,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10179,
@@ -4317,7 +4496,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10180,
@@ -4341,7 +4521,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10181,
@@ -4365,7 +4546,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10182,
@@ -4389,7 +4571,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10183,
@@ -4413,7 +4596,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10184,
@@ -4437,7 +4621,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10185,
@@ -4461,7 +4646,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10186,
@@ -4485,7 +4671,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10187,
@@ -4509,7 +4696,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10188,
@@ -4533,7 +4721,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10189,
@@ -4557,7 +4746,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10190,
@@ -4581,7 +4771,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10191,
@@ -4605,7 +4796,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10192,
@@ -4629,7 +4821,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10193,
@@ -4653,7 +4846,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10194,
@@ -4677,7 +4871,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10195,
@@ -4701,7 +4896,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10196,
@@ -4725,7 +4921,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10197,
@@ -4749,7 +4946,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10198,
@@ -4773,7 +4971,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10199,
@@ -4797,7 +4996,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10200,
@@ -4821,7 +5021,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10201,
@@ -4845,7 +5046,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10202,
@@ -4869,7 +5071,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10203,
@@ -4893,7 +5096,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10204,
@@ -4917,7 +5121,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10205,
@@ -4941,7 +5146,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10206,
@@ -4965,7 +5171,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10207,
@@ -4989,7 +5196,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10208,
@@ -5013,7 +5221,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10209,
@@ -5037,7 +5246,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10210,
@@ -5061,7 +5271,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10211,
@@ -5085,7 +5296,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10212,
@@ -5109,7 +5321,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H28 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10213,
@@ -5133,7 +5346,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10214,
@@ -5157,7 +5371,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10215,
@@ -5181,7 +5396,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10216,
@@ -5205,7 +5421,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10217,
@@ -5229,7 +5446,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10218,
@@ -5253,7 +5471,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10219,
@@ -5277,7 +5496,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10220,
@@ -5301,7 +5521,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10221,
@@ -5325,7 +5546,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10222,
@@ -5349,7 +5571,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10223,
@@ -5373,7 +5596,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10224,
@@ -5397,7 +5621,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10225,
@@ -5421,7 +5646,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10226,
@@ -5445,7 +5671,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10227,
@@ -5469,7 +5696,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10228,
@@ -5493,7 +5721,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10229,
@@ -5517,7 +5746,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10230,
@@ -5541,7 +5771,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10231,
@@ -5565,7 +5796,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10232,
@@ -5589,7 +5821,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10233,
@@ -5613,7 +5846,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10234,
@@ -5637,7 +5871,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10235,
@@ -5661,7 +5896,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10236,
@@ -5685,7 +5921,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10237,
@@ -5709,7 +5946,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10238,
@@ -5733,7 +5971,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10239,
@@ -5757,7 +5996,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10240,
@@ -5781,7 +6021,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10241,
@@ -5805,7 +6046,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10242,
@@ -5829,7 +6071,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10243,
@@ -5853,7 +6096,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10244,
@@ -5877,7 +6121,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10245,
@@ -5901,7 +6146,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10246,
@@ -5925,7 +6171,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10247,
@@ -5949,7 +6196,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10248,
@@ -5973,7 +6221,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10249,
@@ -5997,7 +6246,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10250,
@@ -6021,7 +6271,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10251,
@@ -6045,7 +6296,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H29 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10252,
@@ -6069,7 +6321,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10253,
@@ -6093,7 +6346,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10254,
@@ -6117,7 +6371,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10255,
@@ -6141,7 +6396,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10256,
@@ -6165,7 +6421,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10257,
@@ -6189,7 +6446,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10258,
@@ -6213,7 +6471,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10259,
@@ -6237,7 +6496,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10260,
@@ -6261,7 +6521,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10261,
@@ -6285,7 +6546,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10262,
@@ -6309,7 +6571,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10263,
@@ -6333,7 +6596,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10264,
@@ -6357,7 +6621,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10265,
@@ -6381,7 +6646,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10266,
@@ -6405,7 +6671,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10267,
@@ -6429,7 +6696,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10268,
@@ -6453,7 +6721,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10269,
@@ -6477,7 +6746,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10270,
@@ -6501,7 +6771,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10271,
@@ -6525,7 +6796,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10272,
@@ -6549,7 +6821,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10273,
@@ -6573,7 +6846,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10274,
@@ -6597,7 +6871,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10275,
@@ -6621,7 +6896,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10276,
@@ -6645,7 +6921,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10277,
@@ -6669,7 +6946,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10278,
@@ -6693,7 +6971,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "再エネ"
   },
   {
     "id": 10279,
@@ -6717,7 +6996,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10280,
@@ -6741,7 +7021,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10281,
@@ -6765,7 +7046,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10282,
@@ -6789,7 +7071,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10283,
@@ -6813,7 +7096,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10284,
@@ -6837,7 +7121,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10285,
@@ -6861,7 +7146,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10286,
@@ -6885,7 +7171,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10287,
@@ -6909,7 +7196,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "H30 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10288,
@@ -6933,7 +7221,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10289,
@@ -6957,7 +7246,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10290,
@@ -6981,7 +7271,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10291,
@@ -7005,7 +7296,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10292,
@@ -7029,7 +7321,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10293,
@@ -7053,7 +7346,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10294,
@@ -7077,7 +7371,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10295,
@@ -7101,7 +7396,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10296,
@@ -7125,7 +7421,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10297,
@@ -7149,7 +7446,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10298,
@@ -7173,7 +7471,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10299,
@@ -7197,7 +7496,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10300,
@@ -7221,7 +7521,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10301,
@@ -7245,7 +7546,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10302,
@@ -7269,7 +7571,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10303,
@@ -7293,7 +7596,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10304,
@@ -7317,7 +7621,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10305,
@@ -7341,7 +7646,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10306,
@@ -7365,7 +7671,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10307,
@@ -7389,7 +7696,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10308,
@@ -7413,7 +7721,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10309,
@@ -7437,7 +7746,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10310,
@@ -7461,7 +7771,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10311,
@@ -7485,7 +7796,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10312,
@@ -7509,7 +7821,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10313,
@@ -7533,7 +7846,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10314,
@@ -7557,7 +7871,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10315,
@@ -7581,7 +7896,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10316,
@@ -7605,7 +7921,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10317,
@@ -7629,7 +7946,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10318,
@@ -7653,7 +7971,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10319,
@@ -7677,7 +7996,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10320,
@@ -7701,7 +8021,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10321,
@@ -7725,7 +8046,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10322,
@@ -7749,7 +8071,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R01 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10323,
@@ -7773,7 +8096,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10324,
@@ -7797,7 +8121,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10325,
@@ -7821,7 +8146,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10326,
@@ -7845,7 +8171,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10327,
@@ -7869,7 +8196,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10328,
@@ -7893,7 +8221,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10329,
@@ -7917,7 +8246,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10330,
@@ -7941,7 +8271,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10331,
@@ -7965,7 +8296,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10332,
@@ -7989,7 +8321,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10333,
@@ -8013,7 +8346,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10334,
@@ -8037,7 +8371,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10335,
@@ -8061,7 +8396,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10336,
@@ -8085,7 +8421,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10337,
@@ -8109,7 +8446,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10338,
@@ -8133,7 +8471,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10339,
@@ -8157,7 +8496,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10340,
@@ -8181,7 +8521,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10341,
@@ -8205,7 +8546,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10342,
@@ -8229,7 +8571,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10343,
@@ -8253,7 +8596,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10344,
@@ -8277,7 +8621,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10345,
@@ -8301,7 +8646,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10346,
@@ -8325,7 +8671,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10347,
@@ -8349,7 +8696,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10348,
@@ -8373,7 +8721,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10349,
@@ -8397,7 +8746,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10350,
@@ -8421,7 +8771,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10351,
@@ -8445,7 +8796,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10352,
@@ -8469,7 +8821,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10353,
@@ -8493,7 +8846,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10354,
@@ -8517,7 +8871,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10355,
@@ -8541,7 +8896,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10356,
@@ -8565,7 +8921,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10357,
@@ -8589,7 +8946,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10358,
@@ -8613,7 +8971,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10359,
@@ -8637,7 +8996,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10360,
@@ -8661,7 +9021,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R02 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "電気施設管理"
   },
   {
     "id": 10361,
@@ -8685,7 +9046,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10362,
@@ -8709,7 +9071,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10363,
@@ -8733,7 +9096,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10364,
@@ -8757,7 +9121,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10365,
@@ -8781,7 +9146,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問1",
-    "priority": "B"
+    "priority": "B",
+    "unit": "水力"
   },
   {
     "id": 10366,
@@ -8805,7 +9171,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10367,
@@ -8829,7 +9196,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10368,
@@ -8853,7 +9221,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10369,
@@ -8877,7 +9246,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10370,
@@ -8901,7 +9271,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問2",
-    "priority": "B"
+    "priority": "B",
+    "unit": "火力"
   },
   {
     "id": 10371,
@@ -8925,7 +9296,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10372,
@@ -8949,7 +9321,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10373,
@@ -8973,7 +9346,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10374,
@@ -8997,7 +9371,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10375,
@@ -9021,7 +9396,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問3",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10376,
@@ -9045,7 +9421,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10377,
@@ -9069,7 +9446,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10378,
@@ -9093,7 +9471,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10379,
@@ -9117,7 +9496,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10380,
@@ -9141,7 +9521,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問4",
-    "priority": "B"
+    "priority": "B",
+    "unit": "配電"
   },
   {
     "id": 10381,
@@ -9165,7 +9546,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10382,
@@ -9189,7 +9571,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10383,
@@ -9213,7 +9596,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10384,
@@ -9237,7 +9621,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10385,
@@ -9261,7 +9646,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10386,
@@ -9285,7 +9671,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10387,
@@ -9309,7 +9696,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10388,
@@ -9333,7 +9721,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問5",
-    "priority": "B"
+    "priority": "B",
+    "unit": "送電"
   },
   {
     "id": 10389,
@@ -9357,7 +9746,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10390,
@@ -9381,7 +9771,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10391,
@@ -9405,7 +9796,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10392,
@@ -9429,7 +9821,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10393,
@@ -9453,7 +9846,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10394,
@@ -9477,7 +9871,8 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   },
   {
     "id": 10395,
@@ -9501,6 +9896,7 @@ window.QUESTIONS_LEGACY = [
       "book": "公式解答 + 電験王 解答群"
     },
     "macroTopic": "R03 問6",
-    "priority": "B"
+    "priority": "B",
+    "unit": "変電"
   }
 ];
